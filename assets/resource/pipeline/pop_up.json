@@ -1,0 +1,204 @@
+{
+    "弹弹时报界面": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "template": [
+                    "弹弹时报.png"
+                ],
+                "count": 20
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1123,
+                    148,
+                    37,
+                    34
+                ]
+            }
+        }
+    },
+    "限时特惠界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "限时特惠.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1123,
+                    148,
+                    37,
+                    34
+                ]
+            }
+        }
+    },
+    "每日限购界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "每日限购.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1051,
+                    171,
+                    17,
+                    20
+                ]
+            }
+        }
+    },
+    "首充豪礼界面": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "template": [
+                    "fairygui/首充豪礼.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1051,
+                    171,
+                    17,
+                    20
+                ]
+            }
+        }
+    },
+    "成长基金界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "成长基金.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1124,
+                    161,
+                    18,
+                    17
+                ]
+            }
+        }
+    },
+    "邀请界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "邀请.png"
+                ],
+                "green_mask": true
+            }
+        },
+        "next": [
+            "点击勾选不再接受邀请"
+        ]
+    },
+    "点击勾选不再接受邀请": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    520,
+                    465,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "点击取消接受邀请"
+        ]
+    },
+    "点击取消接受邀请": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    487,
+                    527,
+                    0,
+                    0
+                ]
+            }
+        }
+    },
+    "异地登录界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "您的账户在其他设备登录"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    558,
+                    504,
+                    92,
+                    29
+                ]
+            }
+        }
+    },
+    "网络异常界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "网络异常"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    556,
+                    503,
+                    93,
+                    30
+                ]
+            }
+        }
+    },
+    "等待中界面": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "等待中.png"
+                ],
+                "green_mask": true
+            }
+        }
+    }
+}

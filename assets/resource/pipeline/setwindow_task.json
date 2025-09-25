@@ -1,0 +1,6 @@
+{
+    "设置窗口大小": {
+        "action": "Command",
+        "exec": "{RESOURCE_DIR}/my_exec/setwindow.exe"
+    }
+}
