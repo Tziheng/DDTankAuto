@@ -1,1 +1,0 @@
-T:\Anaconda3\envs\maa\python.exe -m MaaDebugger
