@@ -1,0 +1,276 @@
+{
+    "name": "DDTankAuto",
+    "version": "v1.0.1",
+    "url": "https://github.com/Tziheng/DDTankAuto",
+    "custom_title": "弹弹堂Auto",
+    "controller": [
+        {
+            "name": "桌面端",
+            "type": "Win32",
+            "win32": {
+                "window_regex": "^新弹弹堂$",
+                "screencap": 2,
+                "input": 1
+            }
+        }
+    ],
+    "resource": [
+        {
+            "name": "小程序版本",
+            "path": [
+                "{PROJECT_DIR}/resource"
+            ]
+        }
+    ],
+    "task": [
+        {
+            "name": "启动游戏",
+            "entry": "启动游戏"
+        },
+        {
+            "name": "多人副本",
+            "entry": "多人副本",
+            "option": [
+                "副本关卡",
+                "副本难度",
+                "活力低于不再执行",
+                "是否额外翻牌",
+                "是否自动邀请机器人"
+            ]
+        }
+    ],
+    "option": {
+        "是否额外翻牌": {
+            "cases": [
+                {
+                    "name": "额外翻牌",
+                    "pipeline_override": {
+                        "多人副本-额外翻牌": {
+                            "action": "Click"
+                        }
+                    }
+                },
+                {
+                    "name": "不额外翻牌",
+                    "pipeline_override": {
+                        "多人副本-额外翻牌": {
+                            "action": "Click"
+                        }
+                    }
+                }
+            ],
+            "default_case": "额外翻牌"
+        },
+        "是否自动邀请机器人": {
+            "cases": [
+                {
+                    "name": "邀请",
+                    "pipeline_override": {
+                        "多人副本-根据房间空位是否邀请机器人": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "不邀请",
+                    "pipeline_override": {
+                        "多人副本-根据房间空位是否邀请机器人": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ],
+            "default_case": "邀请"
+        },
+        "活力低于不再执行": {
+            "cases": [
+                {
+                    "name": "小于10",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^[0-9]\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于20",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-1]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于30",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-2]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于40",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-3]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于50",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-4]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于60",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-5]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于70",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-6]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于80",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-7]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于90",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-8]?[0-9])\/200$"
+                        }
+                    }
+                },
+                {
+                    "name": "小于100",
+                    "pipeline_override": {
+                        "多人副本-活力低于不再执行": {
+                            "expected": "^([0-9]?[0-9])\/200$"
+                        }
+                    }
+                }
+            ],
+            "default_case": "小于20"
+        },
+        "副本关卡": {
+            "cases": [
+                {
+                    "name": "魔蚁之巢",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "魔蚁之巢"
+                        }
+                    }
+                },
+                {
+                    "name": "小鸡快跑",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "小鸡快跑"
+                        }
+                    }
+                },
+                {
+                    "name": "啵咕王城",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "啵咕王城"
+                        }
+                    }
+                },
+                {
+                    "name": "邪神部落",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "邪神部落"
+                        }
+                    }
+                },
+                {
+                    "name": "黑暗堡垒",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "黑暗堡垒"
+                        }
+                    }
+                },
+                {
+                    "name": "龙巢之战",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "龙巢之战"
+                        }
+                    }
+                },
+                {
+                    "name": "啵咕运动会",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "啵咕运动会"
+                        }
+                    }
+                }
+            ],
+            "default_case": "啵咕运动会"
+        },
+        "副本难度": {
+            "cases": [
+                {
+                    "name": "困难",
+                    "pipeline_override": {
+                        "多人副本-选择副本难度": {
+                            "target": [
+                                550,
+                                560,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "普通",
+                    "pipeline_override": {
+                        "多人副本-选择副本难度": {
+                            "target": [
+                                430,
+                                560,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "简单",
+                    "pipeline_override": {
+                        "多人副本-选择副本难度": {
+                            "target": [
+                                310,
+                                560,
+                                7,
+                                3
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": "困难"
+        }
+    }
+}
