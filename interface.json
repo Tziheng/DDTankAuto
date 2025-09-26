@@ -2,7 +2,7 @@
     "name": "DDTankAuto",
     "version": "v1.0.1",
     "url": "https://github.com/Tziheng/DDTankAuto",
-    "custom_title": "弹弹堂Auto",
+    "custom_title": "DDTankAuto",
     "controller": [
         {
             "name": "桌面端",
