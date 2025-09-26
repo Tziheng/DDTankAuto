@@ -1,0 +1,238 @@
+{
+    "弹弹堂公告界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "弹弹堂公告.png"
+        ],
+        "action": "Click",
+        "target": [
+            553,
+            567,
+            104,
+            36
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到弹弹堂公告界面，正在关闭。[/color]"
+    },
+    "弹弹时报界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": [
+            "uidynamic/弹弹时报green.png"
+        ],
+        "count": 50,
+        "action": "Click",
+        "target": [
+            1123,
+            148,
+            37,
+            34
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到弹弹时报界面，正在关闭。[/color]"
+    },
+    "限时特惠界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": [
+            "uidynamic/限时特惠green.png"
+        ],
+        "count": 300,
+        "action": "Click",
+        "target": [
+            1123,
+            148,
+            37,
+            34
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到限时特惠界面，正在关闭。[/color]"
+    },
+    "每日限购界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": [
+            "uidynamic/每日限购green.png"
+        ],
+        "count": 50,
+        "action": "Click",
+        "target": [
+            1051,
+            171,
+            17,
+            20
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到每日限购界面，正在关闭。[/color]"
+    },
+    "首充豪礼界面": {
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": [
+            "fairygui/首充豪礼.png"
+        ],
+        "count": 50,
+        "action": "Click",
+        "target": [
+            1051,
+            171,
+            17,
+            20
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到首充豪礼界面，正在关闭。[/color]"
+    },
+    "成长基金界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "成长基金.png"
+        ],
+        "roi": [
+            0,
+            44,
+            1202,
+            676
+        ],
+        "action": "Click",
+        "target": [
+            1124,
+            161,
+            18,
+            17
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到成长基金界面，正在关闭。[/color]"
+    },
+    "获得新宝箱界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "获得新宝箱.png"
+        ],
+        "roi": [
+            774,
+            362,
+            372,
+            308
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "target": [
+            1005,
+            577,
+            52,
+            18
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到获得新宝箱界面，点击确认。[/color]"
+    },
+    "邀请界面": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            300,
+            180,
+            600,
+            400
+        ],
+        "template": [
+            "邀请.png"
+        ],
+        "green_mask": true,
+        "post_wait_freezes": 3000,
+        "next": [
+            "点击勾选不再接受邀请"
+        ],
+        "focus": "[color:yellow]识别到邀请界面。[/color]"
+    },
+    "点击勾选不再接受邀请": {
+        "action": "Click",
+        "target": [
+            520,
+            465,
+            0,
+            0
+        ],
+        "post_wait_freezes": 3000,
+        "next": [
+            "点击取消接受邀请"
+        ],
+        "focus": "[color:yellow]点击勾选不再接受邀请。[/color]"
+    },
+    "点击取消接受邀请": {
+        "timeout": 0,
+        "action": "Click",
+        "target": [
+            490,
+            525,
+            0,
+            0
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]点击取消接受邀请。[/color]"
+    },
+    "异地登录界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "OCR",
+        "roi": [
+            300,
+            180,
+            600,
+            400
+        ],
+        "expected": [
+            "您的账户在其他设备登录"
+        ],
+        "action": "Click",
+        "target": [
+            550,
+            500,
+            90,
+            30
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到异地登录界面，点击确认。[/color]"
+    },
+    "网络异常界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "OCR",
+        "roi": [
+            300,
+            180,
+            600,
+            400
+        ],
+        "expected": [
+            "网络异常"
+        ],
+        "action": "Click",
+        "target": [
+            550,
+            500,
+            90,
+            30
+        ],
+        "post_wait_freezes": 3000,
+        "focus": "[color:yellow]识别到网络异常界面，点击确认。[/color]"
+    },
+    "等待中界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "等待中.png"
+        ],
+        "green_mask": true,
+        "focus": "[color:yellow]识别到等待中界面。[/color]"
+    }
+}

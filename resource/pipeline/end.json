@@ -1,0 +1,33 @@
+{
+    "房间页面-结束任务": {
+        "action": "Click",
+        "target": [
+            129,
+            72,
+            16,
+            11
+        ],
+        "post_wait_freezes": 3000,
+        "next": [
+            "确定退出房间"
+        ]
+    },
+    "确定退出房间": {
+        "action": "Click",
+        "target": [
+            678,
+            503,
+            79,
+            31
+        ],
+        "post_wait_freezes": 3000,
+        "next": [
+            "结束任务"
+        ]
+    },
+    "结束任务": {
+        "timeout": 0,
+        "action": "StopTask",
+        "focus": "[color:green]任务完成，已回到主界面，结束任务！[/color]"
+    }
+}
