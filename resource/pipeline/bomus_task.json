@@ -1,7 +1,7 @@
 {
     "领取福利": {
         "timeout": 60000,
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭弹弹时报界面",
             "关闭限时特惠界面",
@@ -11,6 +11,7 @@
             "关闭获得新宝箱界面",
             "关闭邀请界面",
             "关闭网络异常界面",
+            "关闭恭喜升级啦界面",
             "关闭异地登录界面",
             "关闭恭喜你获得界面",
             "领取福利-游戏主界面",
@@ -28,7 +29,7 @@
             676
         ],
         "green_mask": true,
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "领取福利-点击福利按钮"
         ],
@@ -37,8 +38,15 @@
     "领取福利-点击福利按钮": {
         "recognition": "FeatureMatch",
         "template": "ui/福利.png",
+        "roi": [
+            1067,
+            94,
+            124,
+            493
+        ],
+        "count": 8,
         "action": "Click",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -55,14 +63,13 @@
             66
         ],
         "expected": "福利",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "领取福利-是否执行每日签到"
         ],
         "focus": "[color:blue]当前所在位置：福利页面。[/color]"
     },
     "领取福利-是否执行每日签到": {
-        "post_wait_freezes": 3000,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -81,7 +88,7 @@
         ],
         "expected": "每日签到",
         "action": "Click",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -90,7 +97,6 @@
         "focus": "正在执行每日签到。"
     },
     "领取福利-是否执行每日占卜": {
-        "post_wait_freezes": 3000,
         "next": [
             "关闭邀请界面",
             "领取福利-执行每日占卜",
@@ -108,10 +114,11 @@
         ],
         "expected": "每日占卜",
         "action": "Click",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭邀请界面",
-            "领取福利-每日占卜点击水晶球"
+            "领取福利-每日占卜点击水晶球",
+            "领取福利-是否执行在线奖励"
         ],
         "focus": "正在执行每日占卜。"
     },
@@ -124,20 +131,33 @@
             43
         ],
         "expected": "今日未占卜",
-        "action": "Click",
+        "action": "LongPress",
         "target": [
             674,
             328,
+            0,
+            0
+        ],
+        "duration": 300,
+        "post_wait_freezes": 2000,
+        "next": [
+            "领取福利-确认占卜结果"
+        ]
+    },
+    "领取福利-确认占卜结果": {
+        "action": "Click",
+        "target": [
+            689,
+            622,
             1,
             1
         ],
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "领取福利-是否执行在线奖励"
         ]
     },
     "领取福利-是否执行在线奖励": {
-        "post_wait_freezes": 3000,
         "next": [
             "关闭邀请界面",
             "领取福利-执行在线奖励",
@@ -155,7 +175,7 @@
         ],
         "expected": "在线奖励",
         "action": "Click",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭邀请界面",
             "领取福利-点击领取在线奖励1"
@@ -170,6 +190,7 @@
             1,
             1
         ],
+        "post_wait_freezes": 0,
         "next": [
             "领取福利-点击领取在线奖励2"
         ]
@@ -182,6 +203,7 @@
             1,
             1
         ],
+        "post_wait_freezes": 0,
         "next": [
             "领取福利-点击领取在线奖励3"
         ]
@@ -194,6 +216,7 @@
             1,
             1
         ],
+        "post_wait_freezes": 0,
         "next": [
             "领取福利-点击领取在线奖励4"
         ]
@@ -206,6 +229,7 @@
             1,
             1
         ],
+        "post_wait_freezes": 0,
         "next": [
             "领取福利-点击领取在线奖励5"
         ]
@@ -218,6 +242,7 @@
             1,
             1
         ],
+        "post_wait_freezes": 0,
         "next": [
             "领取福利-点击领取在线奖励6"
         ]
@@ -230,12 +255,12 @@
             1,
             1
         ],
+        "post_wait_freezes": 0,
         "next": [
             "领取福利-是否执行活力领取"
         ]
     },
     "领取福利-是否执行活力领取": {
-        "post_wait_freezes": 3000,
         "next": [
             "关闭邀请界面",
             "领取福利-执行活力领取",
@@ -253,7 +278,7 @@
         ],
         "expected": "活力领取",
         "action": "Click",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭邀请界面",
             "领取福利-点击领取活力",
@@ -272,7 +297,7 @@
         ],
         "expected": "领取",
         "action": "Click",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -280,7 +305,6 @@
         ]
     },
     "领取福利-是否执行奖励找回": {
-        "post_wait_freezes": 3000,
         "next": [
             "关闭邀请界面",
             "领取福利-执行奖励找回"
@@ -297,7 +321,7 @@
         ],
         "expected": "奖励找回",
         "action": "Click",
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -317,7 +341,7 @@
         ],
         "template": "找回50%.png",
         "action": "Click",
-        "post_wait_freezes": 3000
+        "post_wait_freezes": 2000
     },
     "领取福利-执行结束": {
         "next": [

@@ -7,9 +7,9 @@
             16,
             11
         ],
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
-            "确定退出房间"
+            "房间页面-确定退出房间"
         ]
     },
     "房间页面-确定退出房间": {
@@ -20,7 +20,7 @@
             79,
             31
         ],
-        "post_wait_freezes": 3000,
+        "post_wait_freezes": 2000,
         "next": [
             "结束任务"
         ]
