@@ -15,7 +15,7 @@
 
 本助手只在以下地址获取，其他版本及其行为均与本人无关
 
-（如有问题请于Q群反馈）
+（如有问题请提交issue或Q群反馈）
 
 本项目使用框架
 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** , **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 
