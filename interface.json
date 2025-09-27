@@ -36,12 +36,50 @@
                 "副本难度",
                 "活力低于不再执行",
                 "是否额外翻牌",
-                "是否自动邀请机器人"
+                "是否自动邀请机器人",
+                "开始战斗的最低房间人数"
             ],
             "doc": "该任务用于进行多人副本的自动化操作。"
         }
     ],
     "option": {
+        "开始战斗的最低房间人数": {
+            "cases": [
+                {
+                    "name": "1人",
+                    "pipeline_override": {
+                        "多人副本-点击开始游戏": {
+                            "index": 3
+                        }
+                    }
+                },
+                {
+                    "name": "2人",
+                    "pipeline_override": {
+                        "多人副本-点击开始游戏": {
+                            "index": 2
+                        }
+                    }
+                },
+                {
+                    "name": "3人",
+                    "pipeline_override": {
+                        "多人副本-点击开始游戏": {
+                            "index": 1
+                        }
+                    }
+                },
+                {
+                    "name": "4人",
+                    "pipeline_override": {
+                        "多人副本-点击开始游戏": {
+                            "index": 0
+                        }
+                    }
+                }
+            ],
+            "default_case": "2人"
+        },
         "是否额外翻牌": {
             "cases": [
                 {
@@ -54,11 +92,7 @@
                 },
                 {
                     "name": "不额外翻牌",
-                    "pipeline_override": {
-                        "多人副本-额外翻牌": {
-                            "action": "Click"
-                        }
-                    }
+                    "pipeline_override": {}
                 }
             ],
             "default_case": "额外翻牌"
