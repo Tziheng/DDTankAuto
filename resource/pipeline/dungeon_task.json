@@ -89,6 +89,7 @@
         "expected": "关卡选择",
         "post_wait_freezes": 2000,
         "next": [
+            "关闭邀请界面",
             "多人副本-搜寻副本"
         ],
         "interrupt": [
@@ -319,7 +320,9 @@
         "template": "spine/翻牌卡背.png",
         "post_wait_freezes": 500,
         "next": [
-            "多人副本-第一次翻牌"
+            "多人副本-第一次翻牌",
+            "多人副本-房间界面",
+            "多人副本-选择关卡界面"
         ],
         "focus": "[color:blue]当前所在位置：翻牌界面。[/color]"
     },
