@@ -1,7 +1,7 @@
 {
     "领取福利": {
         "timeout": 60000,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭弹弹时报界面",
             "关闭限时特惠界面",
@@ -29,7 +29,7 @@
             676
         ],
         "green_mask": true,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "领取福利-点击福利按钮"
         ],
@@ -46,7 +46,7 @@
         ],
         "count": 8,
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -63,7 +63,7 @@
             66
         ],
         "expected": "福利",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "领取福利-是否执行每日签到"
         ],
@@ -88,7 +88,7 @@
         ],
         "expected": "每日签到",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -114,7 +114,7 @@
         ],
         "expected": "每日占卜",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "领取福利-每日占卜点击水晶球",
@@ -139,7 +139,7 @@
             0
         ],
         "duration": 300,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "领取福利-确认占卜结果"
         ]
@@ -152,7 +152,7 @@
             1,
             1
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "领取福利-是否执行在线奖励"
         ]
@@ -175,7 +175,7 @@
         ],
         "expected": "在线奖励",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "领取福利-点击领取在线奖励1"
@@ -278,7 +278,7 @@
         ],
         "expected": "活力领取",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "领取福利-点击领取活力",
@@ -297,7 +297,7 @@
         ],
         "expected": "领取",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -321,7 +321,7 @@
         ],
         "expected": "奖励找回",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
@@ -341,7 +341,7 @@
         ],
         "template": "找回50%.png",
         "action": "Click",
-        "post_wait_freezes": 300
+        "post_wait_freezes": 500
     },
     "领取福利-执行结束": {
         "next": [

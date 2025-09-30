@@ -1,11 +1,12 @@
 {
-    "测试截图": {
-        "post_wait_freezes": 300,
-        "action": "Command",
-        "exec": "{RESOURCE_DIR}/myexec/show.exe",
-        "args": [
-            "{IMAGE}",
-            "{RESOURCE_DIR}/image/show/mydress.png"
-        ]
+    "测试show": {
+        "action": "Click",
+        "target": [
+            475,
+            566,
+            1,
+            1
+        ],
+        "focus": "[color:green]识别到特定装扮，点击喜欢。[/color]"
     }
 }

@@ -1,7 +1,7 @@
 {
     "多人副本": {
         "timeout": 60000,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭弹弹时报界面",
             "关闭限时特惠界面",
@@ -32,7 +32,7 @@
             676
         ],
         "green_mask": true,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-点击远征码头"
         ],
@@ -46,7 +46,7 @@
             0,
             0
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "多人副本-远征码头界面",
@@ -57,7 +57,7 @@
         "recognition": "FeatureMatch",
         "template": "uidynamic/多人副本.png",
         "count": 20,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-点击多人副本"
         ],
@@ -71,7 +71,7 @@
             100,
             150
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "多人副本-选择关卡界面",
@@ -87,7 +87,7 @@
             50
         ],
         "expected": "关卡选择",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "多人副本-搜寻副本"
@@ -108,7 +108,7 @@
         ],
         "expected": "黑暗堡垒",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-选择副本难度"
         ]
@@ -121,7 +121,7 @@
             0,
             0
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-创建房间"
         ]
@@ -134,7 +134,7 @@
             84,
             57
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "多人副本-房间界面",
@@ -150,7 +150,7 @@
             40
         ],
         "expected": "房间号",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-活力低于不再执行",
             "多人副本-是否开启BOSS战",
@@ -162,7 +162,7 @@
     "多人副本-是否开启BOSS战": {
         "enabled": false,
         "recognition": "OCR",
-        "expected": "BOSS",
+        "expected": "战",
         "roi": [
             809,
             59,
@@ -170,7 +170,7 @@
             45
         ],
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "target": [
             864,
             73,
@@ -189,10 +189,11 @@
             5,
             4
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-房间界面"
-        ]
+        ],
+        "focus": "[color:yellow]开启BOSS战。[/color]"
     },
     "多人副本-根据房间空位是否邀请机器人": {
         "enabled": true,
@@ -206,7 +207,7 @@
             500
         ],
         "index": 1,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-执行邀请机器人"
         ]
@@ -219,7 +220,7 @@
             1,
             1
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-快捷邀请"
         ],
@@ -233,10 +234,31 @@
             1,
             1
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
+            "多人副本-小喇叭发布",
             "多人副本-关闭快捷邀请界面"
         ]
+    },
+    "多人副本-小喇叭发布": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "是否消耗小喇叭",
+        "roi": [
+            465,
+            316,
+            259,
+            48
+        ],
+        "action": "Click",
+        "target": [
+            708,
+            508,
+            11,
+            5
+        ],
+        "post_wait_freezes": 500,
+        "focus": "[color:yellow]使用了一次小喇叭进行快捷邀请。[/color]"
     },
     "多人副本-关闭快捷邀请界面": {
         "action": "Click",
@@ -246,7 +268,7 @@
             2,
             1
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-等待开始游戏"
         ]
@@ -272,7 +294,7 @@
             16,
             11
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-确定退出房间"
         ],
@@ -286,7 +308,7 @@
             79,
             31
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本"
         ]
@@ -303,7 +325,7 @@
         ],
         "index": 1,
         "inverse": true,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "action": "Click",
         "target": [
             1104,
@@ -323,7 +345,7 @@
             240
         ],
         "count": 20,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-开启智能托管"
         ],
@@ -337,7 +359,7 @@
             0,
             0
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-等待战斗结束"
         ],
@@ -354,7 +376,7 @@
     "多人副本-翻牌界面": {
         "recognition": "FeatureMatch",
         "template": "spine/翻牌卡背.png",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-第一次翻牌",
             "多人副本-房间界面",
@@ -367,7 +389,7 @@
         "template": "spine/翻牌卡背.png",
         "count": 15,
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-第二次翻牌",
             "多人副本-房间界面",
@@ -379,7 +401,7 @@
         "template": "spine/翻牌卡背.png",
         "count": 15,
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-额外翻牌",
             "多人副本-房间界面",
@@ -391,7 +413,7 @@
         "template": "spine/翻牌卡背.png",
         "count": 15,
         "action": "DoNothing",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "多人副本-房间界面",
             "多人副本-选择关卡界面"
@@ -406,7 +428,7 @@
             25
         ],
         "expected": "^([0-1]?[0-9])\/200$",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "房间页面-结束任务"
         ],

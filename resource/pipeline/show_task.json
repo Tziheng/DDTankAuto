@@ -1,7 +1,7 @@
 {
     "弹弹选秀": {
         "timeout": 60000,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭弹弹时报界面",
             "关闭限时特惠界面",
@@ -30,7 +30,7 @@
             676
         ],
         "green_mask": true,
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-点击玩法按钮",
@@ -48,7 +48,7 @@
         ],
         "template": "ui/玩法.png",
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-点击弹弹选秀",
@@ -65,7 +65,7 @@
             343
         ],
         "action": "Click",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-主界面",
@@ -81,7 +81,7 @@
             82
         ],
         "expected": "弹弹选秀",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-点击时尚搭配赛界面"
@@ -96,7 +96,7 @@
             150,
             23
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-时尚搭配赛界面",
@@ -112,14 +112,16 @@
             74
         ],
         "expected": "时尚搭配赛",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
-            "弹弹选秀-点击修改搭配"
+            "弹弹选秀-点击修改搭配",
+            "弹弹选秀-识别"
         ],
         "focus": "[color:blue]当前所在位置：时尚搭配赛界面。[/color]"
     },
     "弹弹选秀-点击修改搭配": {
+        "enabled": true,
         "action": "Click",
         "target": [
             1016,
@@ -127,7 +129,7 @@
             18,
             10
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-修改搭配界面",
@@ -143,7 +145,7 @@
             37
         ],
         "expected": "修改确认",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-截图当前搭配1"
@@ -151,7 +153,7 @@
         "focus": "[color:blue]当前所在位置：修改搭配界面。[/color]"
     },
     "弹弹选秀-截图当前搭配1": {
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "action": "Command",
         "exec": "{RESOURCE_DIR}/myexec/show.exe",
         "args": [
@@ -164,7 +166,7 @@
         ]
     },
     "弹弹选秀-截图当前搭配2": {
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "action": "Command",
         "exec": "{RESOURCE_DIR}/myexec/show.exe",
         "args": [
@@ -177,7 +179,7 @@
         ]
     },
     "弹弹选秀-截图当前搭配3": {
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "action": "Command",
         "exec": "{RESOURCE_DIR}/myexec/show.exe",
         "args": [
@@ -197,7 +199,7 @@
             1,
             1
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-时尚搭配赛界面2",
@@ -213,12 +215,11 @@
             74
         ],
         "expected": "时尚搭配赛",
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-识别"
-        ],
-        "focus": "开始识别特定装扮。"
+        ]
     },
     "弹弹选秀-识别": {
         "timeout": 1800000,
@@ -226,13 +227,15 @@
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
-            "弹弹选秀-识别到特定装扮"
+            "弹弹选秀-识别到自己装扮",
+            "弹弹选秀-识别到样例装扮"
         ],
         "on_error": [
             "弹弹选秀-识别结束"
-        ]
+        ],
+        "focus": "开始识别特定装扮。"
     },
-    "弹弹选秀-识别到特定装扮": {
+    "弹弹选秀-识别到自己装扮": {
         "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
@@ -242,15 +245,40 @@
             316
         ],
         "template": [
-            "人物图片.png",
             "show/mydress0.png",
             "show/mydress1.png",
             "show/mydress2.png",
             "show/mydress3.png"
         ],
         "threshold": 0.5,
-        "next": [
-            "弹弹选秀-截屏选中图片"
+        "action": "Click",
+        "target": [
+            476,
+            566,
+            1,
+            1
+        ],
+        "focus": "[color:green]识别到特定装扮，点击喜欢。[/color]"
+    },
+    "弹弹选秀-识别到样例装扮": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            443,
+            200,
+            309,
+            316
+        ],
+        "template": [
+            "人物图片.png"
+        ],
+        "threshold": 0.5,
+        "action": "Click",
+        "target": [
+            476,
+            566,
+            1,
+            1
         ]
     },
     "弹弹选秀-截屏选中图片": {
