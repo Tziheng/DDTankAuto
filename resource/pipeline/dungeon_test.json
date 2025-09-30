@@ -1,6 +1,6 @@
 {
     "多人副本测试1": {
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本测试1-主界面"
         ]
@@ -9,7 +9,7 @@
         "recognition": "TemplateMatch",
         "template": "主界面.png",
         "green_mask": true,
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本测试1-点击码头"
         ]
@@ -22,7 +22,7 @@
             0,
             0
         ],
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本测试1-点击副本"
         ]
@@ -32,7 +32,7 @@
         "template": "uidynamic/多人副本.png",
         "count": 20,
         "action": "Click",
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本测试1-点击小鸡快跑"
         ]
