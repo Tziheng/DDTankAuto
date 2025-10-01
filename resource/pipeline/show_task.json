@@ -258,6 +258,7 @@
             1,
             1
         ],
+        "post_wait_freezes": 500,
         "focus": "[color:green]识别到特定装扮，点击喜欢。[/color]"
     },
     "弹弹选秀-识别到样例装扮": {
@@ -279,7 +280,8 @@
             566,
             1,
             1
-        ]
+        ],
+        "post_wait_freezes": 500
     },
     "弹弹选秀-截屏选中图片": {
         "action": "Command",
