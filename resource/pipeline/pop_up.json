@@ -297,5 +297,23 @@
         ],
         "post_wait_freezes": 500,
         "focus": "[color:yellow]识别到福利界面，正在关闭。[/color]"
+    },
+    "关闭幸运馈赠界面": {
+        "timeout": 0,
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": [
+            "uidynamic/幸运馈赠green.png"
+        ],
+        "count": 300,
+        "action": "Click",
+        "target": [
+            1071,
+            197,
+            1,
+            1
+        ],
+        "post_wait_freezes": 500,
+        "focus": "[color:yellow]识别到幸运馈赠界面，正在关闭。[/color]"
     }
 }

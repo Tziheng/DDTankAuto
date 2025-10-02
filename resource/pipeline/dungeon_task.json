@@ -14,6 +14,7 @@
             "关闭异地登录界面",
             "关闭恭喜你获得界面",
             "关闭恭喜升级啦界面",
+            "关闭幸运馈赠界面",
             "多人副本-游戏主界面",
             "多人副本-远征码头界面",
             "多人副本-选择关卡界面",
@@ -25,12 +26,6 @@
     "多人副本-游戏主界面": {
         "recognition": "TemplateMatch",
         "template": "主界面.png",
-        "roi": [
-            0,
-            44,
-            1202,
-            676
-        ],
         "green_mask": true,
         "post_wait_freezes": 500,
         "next": [
@@ -376,7 +371,7 @@
     "多人副本-翻牌界面": {
         "recognition": "FeatureMatch",
         "template": "spine/翻牌卡背.png",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本-第一次翻牌",
             "多人副本-房间界面",
@@ -389,7 +384,7 @@
         "template": "spine/翻牌卡背.png",
         "count": 15,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本-第二次翻牌",
             "多人副本-房间界面",
@@ -401,7 +396,7 @@
         "template": "spine/翻牌卡背.png",
         "count": 15,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本-额外翻牌",
             "多人副本-房间界面",
@@ -413,7 +408,7 @@
         "template": "spine/翻牌卡背.png",
         "count": 15,
         "action": "DoNothing",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 300,
         "next": [
             "多人副本-房间界面",
             "多人副本-选择关卡界面"

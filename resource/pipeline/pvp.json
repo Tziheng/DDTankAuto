@@ -1,3 +1,193 @@
 {
-    "竞技大厅": {}
+    "竞技场": {
+        "timeout": 60000,
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭弹弹时报界面",
+            "关闭限时特惠界面",
+            "关闭每日限购界面",
+            "关闭首充豪礼界面",
+            "关闭成长基金界面",
+            "关闭获得新宝箱界面",
+            "关闭邀请界面",
+            "关闭网络异常界面",
+            "关闭异地登录界面",
+            "关闭恭喜你获得界面",
+            "关闭幸运馈赠界面",
+            "关闭恭喜升级啦界面",
+            "竞技场-游戏主界面",
+            "竞技场-竞技大厅主界面",
+            "竞技场-房间界面",
+            "竞技场-战斗界面"
+        ],
+        "focus": "正在开始执行竞技场自埋任务。"
+    },
+    "竞技场-游戏主界面": {
+        "recognition": "TemplateMatch",
+        "template": "主界面.png",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "竞技场-点击竞技大厅"
+        ],
+        "focus": "[color:blue]当前所在位置：游戏主界面。[/color]"
+    },
+    "竞技场-点击竞技大厅": {
+        "action": "Click",
+        "target": [
+            629,
+            333,
+            1,
+            1
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭邀请界面",
+            "竞技场-竞技大厅主界面",
+            "竞技场-游戏主界面"
+        ]
+    },
+    "竞技场-竞技大厅主界面": {
+        "recognition": "OCR",
+        "roi": [
+            457,
+            69,
+            308,
+            62
+        ],
+        "expected": "竞技大厅",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭邀请界面",
+            "竞技场-点击自由战",
+            "竞技场-点击黄金联赛"
+        ],
+        "focus": "[color:blue]当前所在位置：竞技大厅页面。[/color]"
+    },
+    "竞技场-点击自由战": {
+        "enabled": true,
+        "action": "Click",
+        "target": [
+            244,
+            422,
+            1,
+            1
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭邀请界面",
+            "竞技场-竞技大厅主界面",
+            "竞技场-游戏主界面",
+            "竞技场-房间界面"
+        ]
+    },
+    "竞技场-点击黄金联赛": {
+        "action": "Click",
+        "target": [
+            611,
+            430,
+            0,
+            1
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭邀请界面",
+            "竞技场-竞技大厅主界面",
+            "竞技场-游戏主界面",
+            "竞技场-房间界面"
+        ]
+    },
+    "竞技场-房间界面": {
+        "recognition": "OCR",
+        "roi": [
+            500,
+            60,
+            200,
+            40
+        ],
+        "expected": "房间号",
+        "post_wait_freezes": 500,
+        "next": [
+            "竞技场-活力低于不再执行",
+            "竞技场-等待开始游戏"
+        ],
+        "focus": "[color:blue]当前所在位置：房间界面。[/color]"
+    },
+    "竞技场-等待开始游戏": {
+        "timeout": 120000,
+        "next": [
+            "竞技场-战斗界面"
+        ],
+        "interrupt": [
+            "竞技场-点击开始游戏"
+        ],
+        "focus": "当前活力值高于设定值，等待开始游戏。"
+    },
+    "竞技场-活力低于不再执行": {
+        "recognition": "OCR",
+        "roi": [
+            245,
+            65,
+            100,
+            25
+        ],
+        "expected": "^([0-1]?[0-9])\/200$",
+        "post_wait_freezes": 500,
+        "next": [
+            "房间页面-结束任务"
+        ],
+        "focus": "[color:red]活力值低于设定值，不再开始竞技场！[/color]"
+    },
+    "竞技场-点击开始游戏": {
+        "post_wait_freezes": 500,
+        "post_delay": 2000,
+        "action": "Click",
+        "target": [
+            1104,
+            655,
+            2,
+            3
+        ],
+        "focus": "尝试点击开始游戏。"
+    },
+    "竞技场-战斗界面": {
+        "recognition": "FeatureMatch",
+        "template": "fairygui/开炮ui.png",
+        "roi": [
+            932,
+            479,
+            269,
+            240
+        ],
+        "count": 20,
+        "post_wait_freezes": 500,
+        "next": [
+            "竞技场-房间界面",
+            "竞技场-翻牌界面"
+        ],
+        "interrupt": [
+            "竞技场-点击开炮自埋"
+        ],
+        "focus": "[color:blue]当前所在位置：战斗界面。[/color]"
+    },
+    "竞技场-翻牌界面": {
+        "recognition": "FeatureMatch",
+        "template": "spine/翻牌卡背.png",
+        "post_wait_freezes": 300,
+        "next": [
+            "竞技场-房间界面"
+        ],
+        "focus": "[color:blue]当前所在位置：翻牌界面。[/color]"
+    },
+    "竞技场-点击开炮自埋": {
+        "action": "Click",
+        "target": [
+            1124,
+            614,
+            1,
+            1
+        ],
+        "post_wait_freezes": 500,
+        "post_delay": 2000
+    }
 }
