@@ -141,6 +141,14 @@
     "竞技场-点击开始游戏": {
         "post_wait_freezes": 500,
         "post_delay": 2000,
+        "recognition": "OCR",
+        "expected": "开始游戏",
+        "roi": [
+            1034,
+            619,
+            154,
+            82
+        ],
         "action": "Click",
         "target": [
             1104,
@@ -166,7 +174,7 @@
             "竞技场-翻牌界面"
         ],
         "interrupt": [
-            "竞技场-点击开炮自埋"
+            "竞技场-点击+2道具"
         ],
         "focus": "[color:blue]当前所在位置：战斗界面。[/color]"
     },
@@ -179,6 +187,63 @@
         ],
         "focus": "[color:blue]当前所在位置：翻牌界面。[/color]"
     },
+    "竞技场-点击+2道具": {
+        "recognition": "OCR",
+        "roi": [
+            542,
+            211,
+            108,
+            36
+        ],
+        "expected": "跳过",
+        "action": "Click",
+        "target": [
+            1159,
+            262,
+            1,
+            1
+        ],
+        "next": [
+            "竞技场-点击+3道具"
+        ]
+    },
+    "竞技场-点击+3道具": {
+        "action": "Click",
+        "target": [
+            1167,
+            340,
+            1,
+            1
+        ],
+        "next": [
+            "竞技场-点击向右移动"
+        ]
+    },
+    "竞技场-点击向右移动": {
+        "action": "LongPress",
+        "target": [
+            194,
+            592,
+            1,
+            1
+        ],
+        "duration": 500,
+        "next": [
+            "竞技场-点击向左移动"
+        ]
+    },
+    "竞技场-点击向左移动": {
+        "action": "Click",
+        "target": [
+            44,
+            590,
+            1,
+            1
+        ],
+        "next": [
+            "竞技场-点击开炮自埋"
+        ]
+    },
     "竞技场-点击开炮自埋": {
         "action": "Click",
         "target": [
@@ -187,7 +252,6 @@
             1,
             1
         ],
-        "post_wait_freezes": 500,
-        "post_delay": 2000
+        "post_wait_freezes": 200
     }
 }

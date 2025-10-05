@@ -134,7 +134,7 @@
             0
         ],
         "duration": 300,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 3000,
         "next": [
             "领取福利-确认占卜结果"
         ]

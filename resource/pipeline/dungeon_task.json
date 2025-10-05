@@ -321,6 +321,38 @@
         "index": 1,
         "inverse": true,
         "post_wait_freezes": 500,
+        "next": [
+            "多人副本-成员点准备",
+            "多人副本-房主点开始游戏"
+        ]
+    },
+    "多人副本-成员点准备": {
+        "recognition": "OCR",
+        "expected": "准备",
+        "roi": [
+            1034,
+            619,
+            154,
+            82
+        ],
+        "action": "Click",
+        "target": [
+            1104,
+            655,
+            2,
+            3
+        ],
+        "focus": "检测到房间人数满足要求，尝试点击准备游戏。"
+    },
+    "多人副本-房主点开始游戏": {
+        "recognition": "OCR",
+        "expected": "开始游戏",
+        "roi": [
+            1034,
+            619,
+            154,
+            82
+        ],
         "action": "Click",
         "target": [
             1104,
