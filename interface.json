@@ -1,6 +1,6 @@
 {
     "name": "DDTankAuto",
-    "version": "v1.1.3",
+    "version": "v2.0.0",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "custom_title": "DDTankAuto",
     "controller": [
@@ -22,7 +22,18 @@
             ]
         }
     ],
+    "agent": {
+        "child_exec": "{PROJECT_DIR}/python/python.exe",
+        "child_args": [
+            "-u",
+            "{PROJECT_DIR}/agent/main.py"
+        ]
+    },
     "task": [
+        {
+            "name": "测试agent",
+            "entry": "测试agent"
+        },
         {
             "name": "竞技场自埋",
             "entry": "竞技场",

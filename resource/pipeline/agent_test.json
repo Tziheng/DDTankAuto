@@ -1,0 +1,10 @@
+{
+    "测试agent": {
+        "action": "Custom",
+        "custom_action": "MyCustomAction",
+        "custom_action_param": [
+            "hello",
+            "world"
+        ]
+    }
+}

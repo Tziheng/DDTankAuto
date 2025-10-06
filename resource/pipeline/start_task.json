@@ -1,6 +1,5 @@
 {
     "启动游戏": {
-        "post_wait_freezes": 500,
         "next": [
             "游戏启动状态"
         ],
@@ -54,7 +53,6 @@
         "template": [
             "进入游戏.png"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "点击进入游戏"
         ]
@@ -67,7 +65,6 @@
             0,
             0
         ],
-        "post_wait_freezes": 500,
         "next": [
             "主界面状态"
         ]

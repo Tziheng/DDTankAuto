@@ -1,7 +1,6 @@
 {
     "弹弹选秀": {
         "timeout": 60000,
-        "post_wait_freezes": 500,
         "next": [
             "关闭弹弹时报界面",
             "关闭限时特惠界面",
@@ -25,7 +24,6 @@
         "recognition": "TemplateMatch",
         "template": "主界面.png",
         "green_mask": true,
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-点击玩法按钮",
@@ -43,7 +41,6 @@
         ],
         "template": "ui/玩法.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-点击弹弹选秀",
@@ -60,7 +57,6 @@
             343
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-主界面",
@@ -76,7 +72,6 @@
             82
         ],
         "expected": "弹弹选秀",
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-点击时尚搭配赛界面"
@@ -91,7 +86,6 @@
             150,
             23
         ],
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-时尚搭配赛界面",
@@ -107,7 +101,6 @@
             74
         ],
         "expected": "时尚搭配赛",
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-点击修改搭配",
@@ -124,7 +117,6 @@
             18,
             10
         ],
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-修改搭配界面",
@@ -140,7 +132,6 @@
             37
         ],
         "expected": "修改确认",
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-截图当前搭配1"
@@ -148,7 +139,6 @@
         "focus": "[color:blue]当前所在位置：修改搭配界面。[/color]"
     },
     "弹弹选秀-截图当前搭配1": {
-        "post_wait_freezes": 500,
         "action": "Command",
         "exec": "{RESOURCE_DIR}/myexec/show.exe",
         "args": [
@@ -161,7 +151,6 @@
         ]
     },
     "弹弹选秀-截图当前搭配2": {
-        "post_wait_freezes": 500,
         "action": "Command",
         "exec": "{RESOURCE_DIR}/myexec/show.exe",
         "args": [
@@ -174,7 +163,6 @@
         ]
     },
     "弹弹选秀-截图当前搭配3": {
-        "post_wait_freezes": 500,
         "action": "Command",
         "exec": "{RESOURCE_DIR}/myexec/show.exe",
         "args": [
@@ -194,7 +182,6 @@
             1,
             1
         ],
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-时尚搭配赛界面2",
@@ -210,7 +197,6 @@
             74
         ],
         "expected": "时尚搭配赛",
-        "post_wait_freezes": 500,
         "next": [
             "关闭邀请界面",
             "弹弹选秀-识别"
@@ -253,7 +239,6 @@
             1,
             1
         ],
-        "post_wait_freezes": 500,
         "focus": "[color:green]识别到特定装扮，点击喜欢。[/color]"
     },
     "弹弹选秀-识别到样例装扮": {
@@ -276,8 +261,7 @@
             566,
             1,
             1
-        ],
-        "post_wait_freezes": 500
+        ]
     },
     "弹弹选秀-截屏选中图片": {
         "action": "Command",

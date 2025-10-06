@@ -1,0 +1,16 @@
+*
+!resource/
+!Assets/
+!agent/
+!resource/**
+!Assets/**
+!agent/**
+resource/image/**/[0-9][0-9][0-9]*
+resource/image/dress_output/
+!README.md
+!interface.json
+!设置窗口大小.exe
+!使用手册.pdf
+!.gitignore
+**/__pycache__
+**/Thumbs.db
