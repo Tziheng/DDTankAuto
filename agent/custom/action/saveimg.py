@@ -53,7 +53,7 @@ class SaveImg(CustomAction):
         img = Image.fromarray(rgb_array)
         img.save(path)
 
-        logger.logo(f"保存图片至{path}")
+        logger.info(f"保存图片至{path}")
         
 
         return True
