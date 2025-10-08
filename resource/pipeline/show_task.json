@@ -109,7 +109,7 @@
         "focus": "[color:blue]当前所在位置：时尚搭配赛界面。[/color]"
     },
     "弹弹选秀-点击修改搭配": {
-        "enabled": true,
+        "enabled": false,
         "action": "Click",
         "target": [
             1016,
@@ -139,36 +139,51 @@
         "focus": "[color:blue]当前所在位置：修改搭配界面。[/color]"
     },
     "弹弹选秀-截图当前搭配1": {
-        "action": "Command",
-        "exec": "{RESOURCE_DIR}/myexec/show.exe",
-        "args": [
-            "{IMAGE}",
-            "{RESOURCE_DIR}/image/show/mydress1.png"
-        ],
+        "action": "Custom",
+        "custom_action": "SaveImg",
+        "custom_action_param": {
+            "roi": [
+                195,
+                200,
+                285,
+                310
+            ],
+            "path": "{RESOURCE_DIR}/image/show/mydress1.png"
+        },
         "next": [
             "关闭邀请界面",
             "弹弹选秀-截图当前搭配2"
         ]
     },
     "弹弹选秀-截图当前搭配2": {
-        "action": "Command",
-        "exec": "{RESOURCE_DIR}/myexec/show.exe",
-        "args": [
-            "{IMAGE}",
-            "{RESOURCE_DIR}/image/show/mydress2.png"
-        ],
+        "action": "Custom",
+        "custom_action": "SaveImg",
+        "custom_action_param": {
+            "roi": [
+                195,
+                200,
+                285,
+                310
+            ],
+            "path": "{RESOURCE_DIR}/image/show/mydress2.png"
+        },
         "next": [
             "关闭邀请界面",
             "弹弹选秀-截图当前搭配3"
         ]
     },
     "弹弹选秀-截图当前搭配3": {
-        "action": "Command",
-        "exec": "{RESOURCE_DIR}/myexec/show.exe",
-        "args": [
-            "{IMAGE}",
-            "{RESOURCE_DIR}/image/show/mydress3.png"
-        ],
+        "action": "Custom",
+        "custom_action": "SaveImg",
+        "custom_action_param": {
+            "roi": [
+                195,
+                200,
+                285,
+                310
+            ],
+            "path": "{RESOURCE_DIR}/image/show/mydress3.png"
+        },
         "next": [
             "关闭邀请界面",
             "弹弹选秀-退出当前搭配"
@@ -204,25 +219,78 @@
     },
     "弹弹选秀-识别": {
         "timeout": 1800000,
-        "rate_limit": 1000,
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
-            "弹弹选秀-识别到自己装扮"
+            "弹弹选秀-投票剩余数不足",
+            "弹弹选秀-识别到自己装扮",
+            "弹弹选秀-退出重进当前界面"
         ],
         "on_error": [
             "弹弹选秀-识别结束"
         ],
         "focus": "开始识别特定装扮。"
     },
+    "弹弹选秀-退出重进当前界面": {
+        "enabled": true,
+        "is_sub": true,
+        "action": "Click",
+        "target": [
+            51,
+            79,
+            1,
+            1
+        ],
+        "post_wait_freezes": 0,
+        "post_delay": 100,
+        "next": [
+            "弹弹选秀-再次进入时尚搭配赛界面"
+        ]
+    },
+    "弹弹选秀-再次进入时尚搭配赛界面": {
+        "action": "Click",
+        "target": [
+            263,
+            198,
+            150,
+            23
+        ],
+        "post_wait_freezes": 500,
+        "post_delay": 0
+    },
+    "弹弹选秀-投票剩余数不足": {
+        "recognition": "OCR",
+        "roi": [
+            488,
+            628,
+            198,
+            40
+        ],
+        "expected": [
+            "（0/20）",
+            "^\\(0/20\\)$"
+        ],
+        "post_delay": 3600000,
+        "next": [
+            "关闭邀请界面",
+            "弹弹选秀-等待一小时完成"
+        ],
+        "focus": "投票次数已用完，暂停一小时投票。"
+    },
+    "弹弹选秀-等待一小时完成": {
+        "focus": "等待一小时已完成，继续投票。",
+        "next": [
+            "弹弹选秀-识别"
+        ]
+    },
     "弹弹选秀-识别到自己装扮": {
         "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
-            443,
+            440,
             200,
-            309,
-            316
+            310,
+            320
         ],
         "template": [
             "show/mydress1.png",
@@ -230,22 +298,38 @@
             "show/mydress3.png"
         ],
         "threshold": 0.5,
+        "post_delay": 0,
+        "post_wait_freezes": 0,
+        "next": [
+            "弹弹选秀-截图保存"
+        ]
+    },
+    "弹弹选秀-截图保存": {
+        "action": "Custom",
+        "custom_action": "SaveImg",
+        "custom_action_param": {
+            "path": "{RESOURCE_DIR}/image/show_output/"
+        },
+        "post_delay": 0,
+        "post_wait_freezes": 0,
         "next": [
             "弹弹选秀-点击喜欢"
         ]
     },
     "弹弹选秀-点击喜欢": {
-        "action": "Click",
+        "timeout": 1000,
+        "action": "LongPress",
         "target": [
             476,
             566,
             1,
             1
         ],
+        "duration": 200,
+        "next": [
+            "关闭恭喜你获得界面"
+        ],
         "focus": "[color:green]识别到特定装扮，点击喜欢。[/color]"
-    },
-    "弹弹选秀-截屏选中图片": {
-        "enabled": false,
     },
     "弹弹选秀-识别结束": {
         "focus": "识别结束，正在返回主界面。",

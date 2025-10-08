@@ -127,27 +127,6 @@ def ensure_venv_and_relaunch_if_needed():
 ### 配置相关 ###
 
 
-def read_interface_version(interface_file_name="./interface.json") -> str:
-    interface_path = Path(project_root_dir) / interface_file_name
-    assets_interface_path = Path(project_root_dir) / "assets" / interface_file_name
-
-    target_path = None
-    if interface_path.exists():
-        target_path = interface_path
-    elif assets_interface_path.exists():
-        return "DEBUG"
-
-    if target_path is None:
-        logger.warning("未找到interface.json")
-        return "unknown"
-
-    try:
-        with open(target_path, "r", encoding="utf-8") as f:
-            interface_data = json.load(f)
-            return interface_data.get("version", "unknown")
-    except Exception:
-        logger.exception(f"读取interface.json版本失败，文件路径：{target_path}")
-        return "unknown"
 
 
 def read_pip_config() -> dict:
@@ -398,9 +377,7 @@ def agent(is_dev_mode=False):
 
 def main():
     
-    current_version = read_interface_version()
-    current_version = "DEBUG"
-    is_dev_mode = current_version == "DEBUG"
+    is_dev_mode = os.path.exists(".vscode") or os.path.exists(".github")
 
     # 如果是Linux系统，启动虚拟环境
     if sys.platform.startswith("linux"):

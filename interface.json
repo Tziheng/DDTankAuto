@@ -1,6 +1,6 @@
 {
-    "name": "DDTankAuto",
-    "version": "v2.0.1",
+    "name": "DDTankAuto v2.0.2",
+    "version": "v2.0.2",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "custom_title": "DDTankAuto",
     "controller": [
@@ -46,9 +46,10 @@
         {
             "name": "弹弹选秀",
             "entry": "弹弹选秀",
-            "doc": "该任务用于进行弹弹选秀的自动化操作。\n会自动获取当前玩家的参选装扮，并在选秀投票页面中找到相似的装扮进行投票。\n可运行该任务的起始页面如下：游戏主界面，弹弹选秀主界面，时尚搭配赛界面。",
+            "doc": "该任务用于进行弹弹选秀的自动化操作。\n会自动获取当前玩家的参选装扮，并在选秀投票页面中找到相似的装扮进行投票。\n可运行该任务的起始页面如下：游戏主界面，弹弹选秀主界面，时尚搭配赛界面。\n不选择截图自己装扮将沿用最后一次开启时的装扮进行投票。\n启动快速刷新有轻微可能被邀请界面打断。",
             "option": [
                 "是否截图自己装扮",
+                "是否启动快速刷新",
                 "相似度最低值",
                 "持续时间"
             ]
@@ -84,6 +85,43 @@
         }
     ],
     "option": {
+        "是否保存点赞图片": {
+            "cases": [
+                {
+                    "name": "保存",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不保存",
+                    "pipeline_override": {
+                        "弹弹选秀-截图保存": {
+                            "action": "DoNothing"
+                        }
+                    }
+                }
+            ],
+            "default_case": "不保存"
+        },
+        "是否启动快速刷新": {
+            "cases": [
+                {
+                    "name": "启动",
+                    "pipeline_override": {
+                        "弹弹选秀-退出重进当前界面": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "不启动",
+                    "pipeline_override": {
+                        "弹弹选秀-退出重进当前界面": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "选择竞技场模式": {
             "cases": [
                 {
@@ -197,7 +235,11 @@
             "cases": [
                 {
                     "name": "是",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "弹弹选秀-点击修改搭配": {
+                            "enabled": true
+                        }
+                    }
                 },
                 {
                     "name": "否",
@@ -212,22 +254,48 @@
         "相似度最低值": {
             "cases": [
                 {
+                    "name": "0%",
+                    "pipeline_override": {
+                        "弹弹选秀-识别到自己装扮": {
+                            "recognition": "DirectHit"
+                        }
+                    }
+                },
+                {
+                    "name": "5%",
+                    "pipeline_override": {
+                        "弹弹选秀-识别到自己装扮": {
+                            "threshold": 0.05
+                        }
+                    }
+                },
+                {
+                    "name": "20%",
+                    "pipeline_override": {
+                        "弹弹选秀-识别到自己装扮": {
+                            "threshold": 0.20
+                        }
+                    }
+                },
+                {
+                    "name": "40%",
+                    "pipeline_override": {
+                        "弹弹选秀-识别到自己装扮": {
+                            "threshold": 0.40
+                        }
+                    }
+                },
+                {
                     "name": "60%",
                     "pipeline_override": {
-                        "弹弹选秀-识别到样例装扮": {
-                            "threshold": 0.6
-                        },
                         "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.6
+                            "threshold": 0.60
                         }
                     }
                 },
                 {
                     "name": "65%（推荐）",
                     "pipeline_override": {
-                        "弹弹选秀-识别到样例装扮": {
-                            "threshold": 0.65
-                        },
                         "弹弹选秀-识别到自己装扮": {
                             "threshold": 0.65
                         }
@@ -236,20 +304,14 @@
                 {
                     "name": "70%",
                     "pipeline_override": {
-                        "弹弹选秀-识别到样例装扮": {
-                            "threshold": 0.7
-                        },
                         "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.7
+                            "threshold": 0.70
                         }
                     }
                 },
                 {
                     "name": "75%",
                     "pipeline_override": {
-                        "弹弹选秀-识别到样例装扮": {
-                            "threshold": 0.75
-                        },
                         "弹弹选秀-识别到自己装扮": {
                             "threshold": 0.75
                         }
@@ -258,11 +320,8 @@
                 {
                     "name": "80%",
                     "pipeline_override": {
-                        "弹弹选秀-识别到样例装扮": {
-                            "threshold": 0.8
-                        },
                         "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.8
+                            "threshold": 0.80
                         }
                     }
                 }
@@ -301,11 +360,20 @@
                             "timeout": 43200000
                         }
                     }
-                }, {
+                },
+                {
                     "name": "24小时",
                     "pipeline_override": {
                         "弹弹选秀-识别": {
                             "timeout": 86400000
+                        }
+                    }
+                },
+                {
+                    "name": "48小时",
+                    "pipeline_override": {
+                        "弹弹选秀-识别": {
+                            "timeout": 172800000
                         }
                     }
                 }

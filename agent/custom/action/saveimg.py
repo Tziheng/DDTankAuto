@@ -21,12 +21,13 @@ class SaveImg(CustomAction):
         
         args = {
             "roi": [0, 0, 0, 0],
-            "path": f"{RESOURCE_DIR}/tmp/{time.get_current_time()}.png",
+            "path": f"{RESOURCE_DIR}/tmp/",
             "msg": "save img"
         }       
         args.update(json.loads(argv.custom_action_param))
-        path = args["path"].format(**locals())
-        logger.debug(os.path.dirname(path))
+        path = args["path"].format(**globals())
+        if path[-1] == "/" or path[-1] == "\\":
+            path = os.path.join(path, f"{time.get_current_time()}.png")
         os.makedirs(os.path.dirname(path), exist_ok=True)
         logger.debug(args)
 
@@ -52,7 +53,7 @@ class SaveImg(CustomAction):
         img = Image.fromarray(rgb_array)
         img.save(path)
 
-        logger.debug(f"save img to {path}")
+        logger.logo(f"保存图片至{path}")
         
 
         return True

@@ -292,16 +292,13 @@
     "多人副本-点击开始游戏": {
         "timeout": 3000,
         "recognition": "FeatureMatch",
-        "template": [
-            "uidynamic/等待中.png",
-            "uidynamic/房间上锁green.png"
-        ],
-        "count": 30,
+        "template": "uidynamic/等待中.png",
+        "count": 25,
         "roi": [
             0,
-            115,
-            520,
-            500
+            105,
+            530,
+            510
         ],
         "index": 1,
         "inverse": true,
@@ -357,7 +354,7 @@
             180,
             200
         ],
-        "count": 15,
+        "count": 10,
         "next": [
             "多人副本-开启智能托管"
         ],
