@@ -1,6 +1,6 @@
 {
     "name": "DDTankAuto",
-    "version": "v2.0.0",
+    "version": "v2.0.1",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "custom_title": "DDTankAuto",
     "controller": [
@@ -299,6 +299,13 @@
                     "pipeline_override": {
                         "弹弹选秀-识别": {
                             "timeout": 43200000
+                        }
+                    }
+                }, {
+                    "name": "24小时",
+                    "pipeline_override": {
+                        "弹弹选秀-识别": {
+                            "timeout": 86400000
                         }
                     }
                 }

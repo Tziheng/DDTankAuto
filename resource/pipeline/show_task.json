@@ -208,8 +208,7 @@
         "next": [
             "关闭邀请界面",
             "关闭恭喜你获得界面",
-            "弹弹选秀-识别到自己装扮",
-            "弹弹选秀-识别到样例装扮"
+            "弹弹选秀-识别到自己装扮"
         ],
         "on_error": [
             "弹弹选秀-识别结束"
@@ -226,12 +225,16 @@
             316
         ],
         "template": [
-            "show/mydress0.png",
             "show/mydress1.png",
             "show/mydress2.png",
             "show/mydress3.png"
         ],
         "threshold": 0.5,
+        "next": [
+            "弹弹选秀-点击喜欢"
+        ]
+    },
+    "弹弹选秀-点击喜欢": {
         "action": "Click",
         "target": [
             476,
@@ -241,35 +244,8 @@
         ],
         "focus": "[color:green]识别到特定装扮，点击喜欢。[/color]"
     },
-    "弹弹选秀-识别到样例装扮": {
-        "enabled": false,
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "roi": [
-            443,
-            200,
-            309,
-            316
-        ],
-        "template": [
-            "人物图片.png"
-        ],
-        "threshold": 0.5,
-        "action": "Click",
-        "target": [
-            476,
-            566,
-            1,
-            1
-        ]
-    },
     "弹弹选秀-截屏选中图片": {
-        "action": "Command",
-        "exec": "{RESOURCE_DIR}/myexec/show2.exe",
-        "args": [
-            "{IMAGE}",
-            "{RESOURCE_DIR}/image/show_output/"
-        ]
+        "enabled": false,
     },
     "弹弹选秀-识别结束": {
         "focus": "识别结束，正在返回主界面。",

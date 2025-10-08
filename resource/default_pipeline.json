@@ -2,7 +2,7 @@
     "Default": {
         "rate_limit": 1000,
         "post_delay": 500,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 300,
         "on_error": "Screenshot"
     }
 }

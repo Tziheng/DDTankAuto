@@ -1,10 +1,27 @@
 {
     "测试agent": {
+        "recognition": "OCR",
+        "expected": "1",
         "action": "Custom",
         "custom_action": "MyCustomAction",
         "custom_action_param": [
             "hello",
             "world"
+        ],
+        "next": [
+            "测试saveimg"
         ]
+    },
+    "测试saveimg": {
+        "action": "Custom",
+        "custom_action": "SaveImg",
+        "custom_action_param": {
+            "roi": [
+                0,
+                0,
+                100,
+                100
+            ]
+        }
     }
 }

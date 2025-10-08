@@ -19,9 +19,9 @@ if os.getcwd() != project_root_dir:
     os.chdir(project_root_dir)
 print(f"set cwd: {os.getcwd()}")
 
-# 将脚本自身的目录添加到sys.path，以便导入utils、maa等模块
-if current_script_dir not in sys.path:
-    sys.path.insert(0, current_script_dir)
+# 将脚本自身的目录，和项目目录添加到sys.path，以便导入utils、maa等模块
+sys.path.insert(0, current_script_dir)
+sys.path.insert(0, project_root_dir)
 
 from utils import logger
 

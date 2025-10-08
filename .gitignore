@@ -14,3 +14,4 @@ resource/image/dress_output/
 !.gitignore
 **/__pycache__
 **/Thumbs.db
+**/tmp

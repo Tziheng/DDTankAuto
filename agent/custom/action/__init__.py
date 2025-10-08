@@ -1,4 +1,7 @@
 from .actiontest import *
+from .saveimg import *
+
 __all__ = [
-    "MyCustomAction"
-]
+    "MyCustomAction",
+    "SaveImg"
+    ]

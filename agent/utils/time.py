@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
 import pytz
 
+def get_current_time(style="%Y%m%d_%H%M%S"):
+    return datetime.now().strftime(style)
 
 def ms_timestamp_diff_to_dhm(timestamp1_ms, timestamp2_ms):
     """

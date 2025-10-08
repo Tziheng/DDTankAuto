@@ -4,6 +4,7 @@ from maa.context import Context
 
 from utils import logger
 
+
 @AgentServer.custom_action("MyCustomAction")
 class MyCustomAction(CustomAction):
 
