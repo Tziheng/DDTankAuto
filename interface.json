@@ -1,8 +1,8 @@
 {
-    "name": "DDTankAuto v2.0.3",
+    "name": "DDTankAuto",
+    "custom_title": "DDTankAuto v2.0.3",
     "version": "v2.0.3",
     "url": "https://github.com/Tziheng/DDTankAuto",
-    "custom_title": "DDTankAuto",
     "controller": [
         {
             "name": "桌面端",
