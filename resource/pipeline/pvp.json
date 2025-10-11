@@ -150,6 +150,7 @@
         "focus": "尝试点击开始游戏。"
     },
     "竞技场-战斗界面": {
+        "timeout": 1800000,
         "recognition": "FeatureMatch",
         "template": "fairygui/开炮ui.png",
         "roi": [

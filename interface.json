@@ -1,6 +1,6 @@
 {
-    "name": "DDTankAuto v2.0.2",
-    "version": "v2.0.2",
+    "name": "DDTankAuto v2.0.3",
+    "version": "v2.0.3",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "custom_title": "DDTankAuto",
     "controller": [
@@ -32,7 +32,13 @@
     "task": [
         {
             "name": "测试agent",
-            "entry": "测试agent"
+            "entry": "测试agent",
+            "doc": "测试功能"
+        },
+        {
+            "name": "弹弹学院自动扫荡（正在开发中）",
+            "entry": "弹弹学院",
+            "doc": "功能即将上线，敬请期待！"
         },
         {
             "name": "竞技场自埋",
@@ -77,11 +83,6 @@
                 "开始战斗的最低房间人数"
             ],
             "doc": "该任务用于进行多人副本的自动化操作。\n可运行该任务的起始页面如下：游戏主界面，远征码头界面，多人副本选择界面，副本房间界面\n该任务自动战斗默认智能托管，可以手动取消并接管战斗。\n当免费快捷邀请次数使用完时，如果你有充足的小喇叭，会自动使用小喇叭快捷邀请。"
-        },
-        {
-            "name": "弹弹学院自动扫荡（正在开发中）",
-            "entry": "弹弹学院",
-            "doc": "功能即将上线，敬请期待！"
         }
     ],
     "option": {
