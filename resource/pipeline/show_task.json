@@ -22,7 +22,7 @@
     },
     "弹弹选秀-游戏主界面": {
         "recognition": "TemplateMatch",
-        "template": "主界面.png",
+        "template": ["主界面.png", "主界面1.png"],
         "green_mask": true,
         "next": [
             "关闭邀请界面",

@@ -407,7 +407,7 @@ def main():
         from agent import setwindows
         setwindows.resize_notepad_width()
     except:
-        logger.error("调整窗口大小失败，可能是权限不足，请以管理员身份运行！")
+        logger.error("调整窗口大小失败，可能是权限不足，请以管理员身份重启 DDTankAuto！")
         return 0
     
 
