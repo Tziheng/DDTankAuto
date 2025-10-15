@@ -6,41 +6,52 @@ from utils import logger,time,RESOURCE_DIR
 import os
 import json
 
-@AgentServer.custom_action("SaveImg")
-class SaveImg(CustomAction):
+@AgentServer.custom_action("ShowLike")
+class ShowLike(CustomAction):
 
     def run(
         self,
         context: Context,
         argv: CustomAction.RunArg,
     ) -> bool:
-        logger.debug("SaveImg is running!")
+        logger.debug("ShowLike is running!")
         logger.debug(argv.custom_action_param)
         
         args = {
-            "roi": [0, 0, 0, 0],
-            "path": f"{RESOURCE_DIR}/tmp/",
-            "msg": "save img"
+            "target": [475, 565],
+            "path": f"{RESOURCE_DIR}/image/show_output/",
+            "msg": "save show img"
         }       
         args.update(json.loads(argv.custom_action_param))
+        target = args["target"]
         path = args["path"].format(**globals())
-        if path[-1] == "/" or path[-1] == "\\":
-            path = os.path.join(path, f"{time.get_current_time()}.png")
-        os.makedirs(os.path.dirname(path), exist_ok=True)
         logger.debug(args)
+        
+        if target == [475, 565]:
+            # 点赞，长按0.2秒
+            context.tasker.controller.post_touch_down(x=target[0], y=target[1])
+            time.sleep(0.2)
+            context.tasker.controller.post_touch_up()
 
-        screen_array =  context.tasker.controller.post_screencap().wait().get()
+
+        # 截图并保存
+        # 获得上次识别结果的相似度
+        node = context.tasker.get_latest_node("弹弹选秀-识别到自己装扮")
+        reco = node.recognition
+        source = reco.best_result.score
+        logger.info(f"识别结果相似度为{source*100:.2f}％")
+
+        if path[-1] == "/" or path[-1] == "\\":
+            path = os.path.join(path, f"time_{time.get_current_time()}_similarity_{source}.png")
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        
+
+        screen_array = context.tasker.controller.cached_image
         logger.debug(f"screen_array shape: {screen_array.shape}")
 
         height, width = screen_array.shape[:2]
 
-        if  args["roi"] != [0, 0, 0, 0]:
-            x, y, w, h = args["roi"]
-            if w<=0 or h<=0 or x<0 or y<0 or x+w > width or y+h > height:
-                logger.warning(f"roi超出屏幕范围,实际窗口范围为({width},{height})")
-                return False
-        else:
-            x, y, w, h = 0, 0, width, height
+        x, y, w, h = 0, 0, width, height
         # BGR2RGB
         if len(screen_array.shape) == 3 and screen_array.shape[2] == 3:
             rgb_array = screen_array[y:y+h, x:x+w, ::-1]
@@ -51,7 +62,7 @@ class SaveImg(CustomAction):
         img = Image.fromarray(rgb_array)
         img.save(path)
 
-        logger.info(f"保存图片至{path}")
+        logger.info(f"保存点赞图片至{path}")
         
 
         return True

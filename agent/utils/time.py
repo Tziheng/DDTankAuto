@@ -94,3 +94,7 @@ def is_current_period(timestamp_ms, timezone="Asia/Shanghai"):
     is_current_month = month_start <= timestamp_datetime < month_end
 
     return is_current_week, is_current_month
+
+def sleep(seconds):
+    from time import sleep
+    sleep(seconds)

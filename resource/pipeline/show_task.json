@@ -22,7 +22,10 @@
     },
     "弹弹选秀-游戏主界面": {
         "recognition": "TemplateMatch",
-        "template": ["主界面.png", "主界面1.png"],
+        "template": [
+            "主界面.png",
+            "主界面1.png"
+        ],
         "green_mask": true,
         "next": [
             "关闭邀请界面",
@@ -301,35 +304,15 @@
         "post_delay": 0,
         "post_wait_freezes": 0,
         "next": [
-            "弹弹选秀-截图保存"
+            "弹弹选秀-点击喜欢截图"
         ]
     },
-    "弹弹选秀-截图保存": {
-        "action": "Custom",
-        "custom_action": "SaveImg",
-        "custom_action_param": {
-            "path": "{RESOURCE_DIR}/image/show_output/"
-        },
-        "post_delay": 0,
-        "post_wait_freezes": 0,
-        "next": [
-            "弹弹选秀-点击喜欢"
-        ]
-    },
-    "弹弹选秀-点击喜欢": {
+    "弹弹选秀-点击喜欢截图": {
         "timeout": 1000,
-        "action": "LongPress",
-        "target": [
-            476,
-            566,
-            1,
-            1
-        ],
-        "duration": 200,
-        "next": [
-            "关闭恭喜你获得界面"
-        ],
-        "focus": "[color:green]识别到特定装扮，点击喜欢。[/color]"
+        "action": "Custom",
+        "custom_action": "ShowLike",
+        "custom_action_param": {},
+        "focus": "[color:green]识别到特定装扮，正在执行操作并截图。[/color]"
     },
     "弹弹选秀-识别结束": {
         "focus": "识别结束，正在返回主界面。",

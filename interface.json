@@ -1,7 +1,7 @@
 {
     "name": "DDTankAuto",
-    "custom_title": "DDTankAuto v2.0.3",
-    "version": "v2.0.3",
+    "custom_title": "DDTankAuto v2.0.4",
+    "version": "v2.0.4",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "controller": [
         {
@@ -57,6 +57,7 @@
                 "是否截图自己装扮",
                 "是否启动快速刷新",
                 "相似度最低值",
+                "是否点赞",
                 "持续时间"
             ]
         },
@@ -86,17 +87,22 @@
         }
     ],
     "option": {
-        "是否保存点赞图片": {
+        "是否点赞": {
             "cases": [
                 {
-                    "name": "保存",
+                    "name": "点赞",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "不保存",
+                    "name": "不做任何操作",
                     "pipeline_override": {
-                        "弹弹选秀-截图保存": {
-                            "action": "DoNothing"
+                        "弹弹选秀-点击喜欢截图": {
+                            "custom_action_param": {
+                                "target": [
+                                    0,
+                                    0
+                                ]
+                            }
                         }
                     }
                 }
@@ -255,18 +261,10 @@
         "相似度最低值": {
             "cases": [
                 {
-                    "name": "0%",
+                    "name": "10%",
                     "pipeline_override": {
                         "弹弹选秀-识别到自己装扮": {
-                            "recognition": "DirectHit"
-                        }
-                    }
-                },
-                {
-                    "name": "5%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.05
+                            "threshold": 0.10
                         }
                     }
                 },

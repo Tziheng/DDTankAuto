@@ -244,10 +244,10 @@
         "expected": "恭喜你获得",
         "action": "Click",
         "target": [
-            612,
-            561,
-            4,
-            8
+            600,
+            650,
+            0,
+            0
         ],
         "focus": "[color:yellow]识别到获得奖励界面，正在关闭。[/color]"
     },
