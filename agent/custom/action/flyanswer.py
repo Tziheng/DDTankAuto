@@ -57,4 +57,4 @@ class FlyAnswer(CustomAction):
          
         logger.info("飞飞乐脚本运行结束！")
 
-        return True
+        return CustomAction.RunResult(success=True)

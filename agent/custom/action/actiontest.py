@@ -18,4 +18,4 @@ class MyCustomAction(CustomAction):
         # argv.custom_action_param 是一个 str,用eval()解析
         logger.info(eval(argv.custom_action_param)[1])
 
-        return True
+        return CustomAction.RunResult(success=True)

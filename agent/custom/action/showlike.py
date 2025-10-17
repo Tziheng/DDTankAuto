@@ -14,13 +14,12 @@ class ShowLike(CustomAction):
         context: Context,
         argv: CustomAction.RunArg,
     ) -> bool:
-        logger.debug(f"ShowLike run !") 
+        logger.debug(f"选秀点赞截图正在运行!") 
         logger.debug(argv.custom_action_param)
         
         args = {
             "target": [475, 565],
             "path": f"{RESOURCE_DIR}/image/show_output/",
-            "msg": "save show img"
         }       
         args.update(json.loads(argv.custom_action_param))
         target = args["target"]
@@ -66,4 +65,4 @@ class ShowLike(CustomAction):
         logger.info(f"保存点赞图片至{path}")
         
 
-        return True
+        return CustomAction.RunResult(success=True)

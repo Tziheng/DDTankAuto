@@ -54,4 +54,4 @@ class SaveImg(CustomAction):
         logger.info(f"保存图片至{path}")
         
 
-        return True
+        return CustomAction.RunResult(success=True)
