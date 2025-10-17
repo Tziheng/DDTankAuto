@@ -3,7 +3,8 @@
         "action": "Custom",
         "custom_action": "FlyAnswer",
         "custom_action_param": {
-            "duration": 3600
+            "duration": 3600,
+            "n": 3
         }
     }
 }

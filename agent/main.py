@@ -25,10 +25,10 @@ print(f"set cwd: {os.getcwd()}")
 sys.path.insert(0, current_script_dir)
 sys.path.insert(0, project_root_dir)
 
-from utils import logger
+from utils import logger,PROJECT_DIR
 
 VENV_NAME = ".venv"  # 虚拟环境目录的名称
-VENV_DIR = Path(project_root_dir) / VENV_NAME
+VENV_DIR = Path(PROJECT_DIR) / VENV_NAME
 
 ### 虚拟环境相关 ###
 

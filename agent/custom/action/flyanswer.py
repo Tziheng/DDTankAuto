@@ -21,9 +21,12 @@ class FlyAnswer(CustomAction):
         logger.info("飞飞乐脚本开始运行！")
         args = {     
             "duration": 3600,
+            "n":3,
         }
         args.update(json.loads(argv.custom_action_param))
         duration = args["duration"]
+        n = args["n"]
+        logger.debug(f"args：{args}")
 
         # 读取题库
         filepath = os.path.join(RESOURCE_DIR,"text/flyquestion.csv")
@@ -45,13 +48,16 @@ class FlyAnswer(CustomAction):
             alltext = "".join([_.text for _ in all_results])
             
             # 匹配题目
-            best_match = process.extract(alltext, questionbank.keys(),limit=1)
-
-            question = best_match[0][0]
-            answer = questionbank[question]
-
+            best_match = process.extract(alltext, questionbank.keys(),limit=n)
+            
             # 回答题目
-            logger.info("\n"+"="*15+f"\n当前题目最有可能为：\n{question}\n"+f"该题答案：\n{answer}\n"+"="*15)
+            output = ""
+            for i in range(n-1,-1,-1):
+                question = best_match[i][0]
+                answer = questionbank[question]    
+                score = best_match[i][1]
+                output += f"\n当前题目为：（置信度：{score:.0f}％）\n{question}\n"+f"该题答案：\n{answer}\n"
+            logger.info("\n"+"="*15+output+"="*15)
             time.sleep(3)
             cnt += 3
          

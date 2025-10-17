@@ -38,7 +38,7 @@
         {
             "name": "飞飞乐答案提示器",
             "entry": "飞飞乐",
-            "doc": "该任务用于提示飞飞乐题目答案。题库位于 resource/text/flyquestion.txt, 可自行按原格式导入新题。",
+            "doc": "该任务用于提示飞飞乐题目答案。\n题库位于 resource/text/flyquestion.csv, 可以用记事本打开，可以自行按原格式导入新题。",
             "option": [
                 "飞飞乐持续时间"
             ]
