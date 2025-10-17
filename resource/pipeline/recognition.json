@@ -1,0 +1,14 @@
+{
+    "TemplateMatch": {
+        "recognition": "TemplateMatch",
+        "template": []
+    },
+    "FeatureMatch": {
+        "recognition": "FeatureMatch",
+        "template": []
+    },
+    "OCR": {
+        "recognition": "OCR",
+        "expected": []
+    }
+}

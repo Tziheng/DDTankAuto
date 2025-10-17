@@ -1,9 +1,11 @@
 from .actiontest import *
 from .saveimg import *
 from .showlike import *
+from .flyanswer import *
 
 __all__ = [
     "MyCustomAction",
     "SaveImg",
-    "ShowLike"
+    "ShowLike",
+    "FlyAnswer"
     ]

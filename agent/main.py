@@ -27,7 +27,6 @@ sys.path.insert(0, project_root_dir)
 
 from utils import logger
 
-
 VENV_NAME = ".venv"  # 虚拟环境目录的名称
 VENV_DIR = Path(project_root_dir) / VENV_NAME
 

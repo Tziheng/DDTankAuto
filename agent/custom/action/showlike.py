@@ -14,7 +14,7 @@ class ShowLike(CustomAction):
         context: Context,
         argv: CustomAction.RunArg,
     ) -> bool:
-        logger.debug("ShowLike is running!")
+        logger.debug(f"ShowLike run !") 
         logger.debug(argv.custom_action_param)
         
         args = {
@@ -28,10 +28,11 @@ class ShowLike(CustomAction):
         logger.debug(args)
         
         if target == [475, 565]:
+            logger.info("正在执行点赞操作")
             # 点赞，长按0.2秒
-            context.tasker.controller.post_touch_down(x=target[0], y=target[1])
+            context.tasker.controller.post_touch_down(x=target[0], y=target[1]).wait()
             time.sleep(0.2)
-            context.tasker.controller.post_touch_up()
+            context.tasker.controller.post_touch_up().wait()
 
 
         # 截图并保存

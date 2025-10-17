@@ -1,0 +1,9 @@
+{
+    "飞飞乐": {
+        "action": "Custom",
+        "custom_action": "FlyAnswer",
+        "custom_action_param": {
+            "duration": 3600
+        }
+    }
+}

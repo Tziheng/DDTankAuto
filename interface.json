@@ -1,7 +1,7 @@
 {
     "name": "DDTankAuto",
-    "custom_title": "DDTankAuto v2.0.4",
-    "version": "v2.0.4",
+    "custom_title": "DDTankAuto v2.1.0",
+    "version": "v2.1.0",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "controller": [
         {
@@ -34,6 +34,14 @@
             "name": "测试agent",
             "entry": "测试agent",
             "doc": "测试功能"
+        },
+        {
+            "name": "飞飞乐答案提示器",
+            "entry": "飞飞乐",
+            "doc": "该任务用于提示飞飞乐题目答案。题库位于 resource/text/flyquestion.txt, 可自行按原格式导入新题。",
+            "option": [
+                "飞飞乐持续时间"
+            ]
         },
         {
             "name": "弹弹学院自动扫荡（正在开发中）",
@@ -87,6 +95,41 @@
         }
     ],
     "option": {
+        "飞飞乐持续时间": {
+            "cases": [
+                {
+                    "name": "10分钟",
+                    "pipeline_override": {
+                        "飞飞乐": {
+                            "custom_action_param": {
+                                "duration": 600
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "30分钟",
+                    "pipeline_override": {
+                        "飞飞乐": {
+                            "custom_action_param": {
+                                "duration": 1800
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "60分钟",
+                    "pipeline_override": {
+                        "飞飞乐": {
+                            "custom_action_param": {
+                                "duration": 3600
+                            }
+                        }
+                    }
+                }
+            ],
+            "default_case": "30分钟"
+        },
         "是否点赞": {
             "cases": [
                 {
