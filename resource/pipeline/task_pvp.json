@@ -1,7 +1,19 @@
 {
+    "竞技场agent": {
+        "action": "Custom",
+        "custom_action": "FightAgent",
+        "custom_action_param": {
+            "mode": 0,
+            "times": 1
+        }
+    },
     "竞技场": {
         "timeout": 60000,
         "next": [
+            "竞技场-房间界面",
+            "竞技场-战斗界面",
+            "竞技场-联赛结算界面",
+            "竞技场-翻牌界面",
             "关闭弹弹时报界面",
             "关闭限时特惠界面",
             "关闭每日限购界面",
@@ -15,15 +27,16 @@
             "关闭幸运馈赠界面",
             "关闭恭喜升级啦界面",
             "竞技场-游戏主界面",
-            "竞技场-竞技大厅主界面",
-            "竞技场-房间界面",
-            "竞技场-战斗界面"
+            "竞技场-竞技大厅主界面"
         ],
         "focus": "正在开始执行竞技场自埋任务。"
     },
     "竞技场-游戏主界面": {
         "recognition": "TemplateMatch",
-        "template": ["主界面.png", "主界面1.png"],
+        "template": [
+            "主界面.png",
+            "主界面1.png"
+        ],
         "green_mask": true,
         "next": [
             "竞技场-点击竞技大厅"
@@ -101,7 +114,6 @@
         ],
         "expected": "房间号",
         "next": [
-            "竞技场-活力低于不再执行",
             "竞技场-等待开始游戏"
         ],
         "focus": "[color:blue]当前所在位置：房间界面。[/color]"
@@ -114,22 +126,7 @@
         ],
         "interrupt": [
             "竞技场-点击开始游戏"
-        ],
-        "focus": "当前活力值高于设定值，等待开始游戏。"
-    },
-    "竞技场-活力低于不再执行": {
-        "recognition": "OCR",
-        "roi": [
-            245,
-            65,
-            100,
-            25
-        ],
-        "expected": "^([0-1]?[0-9])\/200$",
-        "next": [
-            "房间页面-结束任务"
-        ],
-        "focus": "[color:red]活力值低于设定值，不再开始竞技场！[/color]"
+        ]
     },
     "竞技场-点击开始游戏": {
         "recognition": "OCR",
@@ -159,9 +156,10 @@
             269,
             240
         ],
-        "count": 20,
+        "count": 8,
         "next": [
-            "竞技场-房间界面",
+            "竞技场-联赛结算界面",
+            "竞技场-结束界面",
             "竞技场-翻牌界面"
         ],
         "interrupt": [
@@ -169,15 +167,42 @@
         ],
         "focus": "[color:blue]当前所在位置：战斗界面。[/color]"
     },
+    "竞技场-联赛结算界面": {
+        "recognition": "OCR",
+        "roi": [
+            980,
+            640,
+            200,
+            70
+        ],
+        "expected": "点击关闭",
+        "action": "Click",
+        "next": [
+            "竞技场-结束界面"
+        ],
+        "focus": "[color:blue]当前所在位置：联赛结算界面。[/color]"
+    },
     "竞技场-翻牌界面": {
         "recognition": "FeatureMatch",
         "template": "spine/翻牌卡背.png",
         "next": [
-            "竞技场-房间界面"
+            "竞技场-结束界面"
         ],
         "focus": "[color:blue]当前所在位置：翻牌界面。[/color]"
     },
+    "竞技场-结束界面": {
+        "recognition": "OCR",
+        "roi": [
+            500,
+            60,
+            200,
+            40
+        ],
+        "expected": "房间号"
+    },
     "竞技场-点击+2道具": {
+        "post_delay": 500,
+        "pre_wait_freezes": 0,
         "recognition": "OCR",
         "roi": [
             542,
@@ -198,6 +223,8 @@
         ]
     },
     "竞技场-点击+3道具": {
+        "post_delay": 500,
+        "pre_wait_freezes": 0,
         "action": "Click",
         "target": [
             1167,
@@ -210,6 +237,8 @@
         ]
     },
     "竞技场-点击向右移动": {
+        "post_delay": 500,
+        "pre_wait_freezes": 0,
         "action": "LongPress",
         "target": [
             194,
@@ -223,6 +252,8 @@
         ]
     },
     "竞技场-点击向左移动": {
+        "post_delay": 500,
+        "pre_wait_freezes": 0,
         "action": "LongPress",
         "target": [
             44,
@@ -236,6 +267,8 @@
         ]
     },
     "竞技场-点击开炮自埋": {
+        "post_delay": 500,
+        "pre_wait_freezes": 0,
         "action": "Click",
         "target": [
             1124,

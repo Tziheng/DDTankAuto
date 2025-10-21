@@ -50,10 +50,10 @@
         },
         {
             "name": "竞技场自埋",
-            "entry": "竞技场",
+            "entry": "竞技场agent",
             "doc": "该任务用于自由战或者联赛自动挂机。\n高分段误用！重视信誉分者误用！\n可运行该任务的起始页面如下：游戏主界面，竞技大厅主界面，房间界面。",
             "option": [
-                "活力低于不再执行竞技场",
+                "竞技场执行次数",
                 "选择竞技场模式"
             ]
         },
@@ -81,12 +81,12 @@
         },
         {
             "name": "多人副本自动扫荡",
-            "entry": "多人副本",
+            "entry": "多人副本agent",
             "option": [
                 "副本关卡",
                 "副本难度",
                 "开启BOSS战",
-                "活力低于不再执行多人副本",
+                "多人副本通过关卡数",
                 "是否额外翻牌",
                 "是否自动邀请机器人",
                 "开始战斗的最低房间人数"
@@ -95,6 +95,256 @@
         }
     ],
     "option": {
+        "多人副本通过关卡数": {
+            "cases": [
+                {
+                    "name": "无限次",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 10000000
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 1
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 3
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 4
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 5
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 6
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "7",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 7
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 8
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "9",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 9
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "10",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 10
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "竞技场执行次数": {
+            "cases": [
+                {
+                    "name": "无限次",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 10000000
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 1
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 3
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 4
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 5
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 6
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "7",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 7
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "8",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 8
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "9",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 9
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "10",
+                    "pipeline_override": {
+                        "竞技场agent": {
+                            "custom_action_param": {
+                                "mode": 0,
+                                "times": 10
+                            }
+                        }
+                    }
+                }
+            ]
+        },
         "飞飞乐持续时间": {
             "cases": [
                 {
@@ -540,50 +790,10 @@
                     }
                 },
                 {
-                    "name": "小于10",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^[0-9]\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于20",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-1]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于30",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-2]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于40",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-3]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于50",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-4]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
                     "name": "小于60",
                     "pipeline_override": {
                         "多人副本-活力低于不再执行": {
-                            "expected": "^([0-5]?[0-9])\/200$"
+                            "expected": "^([0-5]?[0-9])\/300$"
                         }
                     }
                 },

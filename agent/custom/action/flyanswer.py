@@ -1,11 +1,9 @@
 from maa.agent.agent_server import AgentServer
 from maa.custom_action import CustomAction
 from maa.context import Context
-from PIL import Image
 from utils import logger,time,RESOURCE_DIR
 import os
 import json
-import csv
 import pandas as pd
 from rapidfuzz import process
 
