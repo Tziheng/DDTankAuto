@@ -1,7 +1,7 @@
 {
     "name": "DDTankAuto",
-    "custom_title": "DDTankAuto v2.1.0",
-    "version": "v2.1.0",
+    "custom_title": "DDTankAuto v2.1.1",
+    "version": "v2.1.1",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "controller": [
         {
@@ -358,21 +358,21 @@
                     }
                 },
                 {
-                    "name": "30分钟",
+                    "name": "20分钟",
                     "pipeline_override": {
                         "飞飞乐": {
                             "custom_action_param": {
-                                "duration": 1800
+                                "duration": 1200
                             }
                         }
                     }
                 },
                 {
-                    "name": "60分钟",
+                    "name": "30分钟",
                     "pipeline_override": {
                         "飞飞乐": {
                             "custom_action_param": {
-                                "duration": 3600
+                                "duration": 1800
                             }
                         }
                     }
