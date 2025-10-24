@@ -1,7 +1,7 @@
 {
     "name": "DDTankAuto",
-    "custom_title": "DDTankAuto v2.1.1",
-    "version": "v2.1.1",
+    "custom_title": "DDTankAuto v2.1.2",
+    "version": "v2.1.2",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "controller": [
         {
@@ -217,6 +217,226 @@
                             }
                         }
                     }
+                },
+                {
+                    "name": "11",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 11
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "12",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 12
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "13",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 13
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "14",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 14
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "15",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 15
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "16",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 16
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "17",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 17
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "18",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 18
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "19",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 19
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "20",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 20
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "21",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 21
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "22",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 22
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "23",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 23
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "24",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 24
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "25",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 25
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "26",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 26
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "27",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 27
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "28",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 28
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "29",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 29
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "30",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 30
+                            }
+                        }
+                    }
                 }
             ]
         },
@@ -389,18 +609,13 @@
                 {
                     "name": "不做任何操作",
                     "pipeline_override": {
-                        "弹弹选秀-点击喜欢截图": {
-                            "custom_action_param": {
-                                "target": [
-                                    0,
-                                    0
-                                ]
-                            }
+                        "弹弹选秀-点击喜欢": {
+                            "enabled": false
                         }
                     }
                 }
             ],
-            "default_case": "不保存"
+            "default_case": "点赞"
         },
         "是否启动快速刷新": {
             "cases": [
@@ -437,99 +652,6 @@
                     }
                 }
             ]
-        },
-        "活力低于不再执行竞技场": {
-            "cases": [
-                {
-                    "name": "无限次",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "无限次"
-                        }
-                    }
-                },
-                {
-                    "name": "小于10",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^[0-9]\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于20",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-1]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于30",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-2]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于40",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-3]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于50",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-4]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于60",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-5]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于70",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-6]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于80",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-7]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于90",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-8]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于100",
-                    "pipeline_override": {
-                        "竞技场-活力低于不再执行": {
-                            "expected": "^([0-9]?[0-9])\/200$"
-                        }
-                    }
-                }
-            ],
-            "default_case": "小于20"
         },
         "是否截图自己装扮": {
             "cases": [
@@ -778,59 +900,6 @@
                 }
             ],
             "default_case": "邀请"
-        },
-        "活力低于不再执行多人副本": {
-            "cases": [
-                {
-                    "name": "无限次",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "无限次"
-                        }
-                    }
-                },
-                {
-                    "name": "小于60",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-5]?[0-9])\/300$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于70",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-6]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于80",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-7]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于90",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-8]?[0-9])\/200$"
-                        }
-                    }
-                },
-                {
-                    "name": "小于100",
-                    "pipeline_override": {
-                        "多人副本-活力低于不再执行": {
-                            "expected": "^([0-9]?[0-9])\/200$"
-                        }
-                    }
-                }
-            ],
-            "default_case": "小于20"
         },
         "副本关卡": {
             "cases": [

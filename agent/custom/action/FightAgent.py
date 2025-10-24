@@ -19,23 +19,24 @@ class FightAgent(CustomAction):
             "mode":0,
             "times":1
         }       
-        args.update(json.loads(argv.custom_action_param))
+        if argv.custom_action_param is not None:
+            args.update(json.loads(argv.custom_action_param))
         logger.debug(args)
 
         times = args["times"]
         mode = args["mode"]
 
-        if mode == 0:
-            for i in range(times):
+        
+        for i in range(times):
+            if context.tasker.stopping:
+                logger.info("FightAgent is stopping!")
+                return CustomAction.RunResult(success=False)
+            if mode == 0:
                 logger.info(f"开始执行第{i+1}次竞技场自埋任务！")
                 context.run_task("竞技场")
-
-            context.run_task("房间页面-结束任务")
-        if mode == 1:
-            for i in range(times):
-                logger.info(f"开始执行第{i+1}次多人副本任务！")
+            else:
+                logger.info(f"开始执行第{i+1}关多人副本任务！")
                 context.run_task("多人副本")
-
-            context.run_task("房间页面-结束任务")
+        context.run_task("房间页面-结束任务")
 
         return CustomAction.RunResult(success=True)

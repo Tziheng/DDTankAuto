@@ -15,7 +15,8 @@ class SaveImg(CustomAction):
         argv: CustomAction.RunArg,
     ) -> bool:
         logger.debug("SaveImg is running!")
-        logger.debug(argv.custom_action_param)
+        if argv.custom_action_param is not None:
+            logger.debug(argv.custom_action_param)
         
         args = {
             "roi": [0, 0, 0, 0],

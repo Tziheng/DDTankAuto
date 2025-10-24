@@ -6,34 +6,24 @@ from utils import logger,time,RESOURCE_DIR
 import os
 import json
 
-@AgentServer.custom_action("ShowLike")
-class ShowLike(CustomAction):
+@AgentServer.custom_action("ShowSave")
+class ShowSave(CustomAction):
 
     def run(
         self,
         context: Context,
         argv: CustomAction.RunArg,
     ) -> bool:
-        logger.debug(f"选秀点赞截图正在运行!") 
-        logger.debug(argv.custom_action_param)
-        
+        logger.debug(f"选秀截图正在运行!")         
         args = {
-            "target": [475, 565],
             "path": f"{RESOURCE_DIR}/image/show_output/",
-        }       
-        args.update(json.loads(argv.custom_action_param))
-        target = args["target"]
+        }
+        if argv.custom_action_param is not None:
+            logger.debug(argv.custom_action_param)
+            args.update(json.loads(argv.custom_action_param))
         path = args["path"].format(**globals())
         logger.debug(args)
         
-        if target == [475, 565]:
-            logger.info("正在执行点赞操作")
-            # 点赞，长按0.2秒
-            context.tasker.controller.post_touch_down(x=target[0], y=target[1]).wait()
-            time.sleep(0.2)
-            context.tasker.controller.post_touch_up().wait()
-
-
         # 截图并保存
         # 获得上次识别结果的相似度
         node = context.tasker.get_latest_node("弹弹选秀-识别到自己装扮")

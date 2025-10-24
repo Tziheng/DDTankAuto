@@ -22,7 +22,8 @@ class FlyAnswer(CustomAction):
             "duration": 3600,
             "n":1,
         }
-        args.update(json.loads(argv.custom_action_param))
+        if argv.custom_action_param is not None:
+            args.update(json.loads(argv.custom_action_param))
         duration = args["duration"]
         n = args["n"]
         logger.debug(f"args：{args}")
@@ -36,7 +37,7 @@ class FlyAnswer(CustomAction):
         # 最长持续时间
         lastoutput = ""
         start = datetime.now()
-        while (datetime.now() - start).total_seconds() < duration:
+        while (datetime.now() - start).total_seconds() < duration and not context.tasker.stopping:
             try:
                 # 截屏读取实时题目
                 img = context.tasker.controller.post_screencap().wait().get()

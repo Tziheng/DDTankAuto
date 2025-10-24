@@ -305,15 +305,36 @@
         "post_delay": 0,
         "post_wait_freezes": 0,
         "next": [
-            "弹弹选秀-点击喜欢截图"
+            "弹弹选秀-点击喜欢",
+            "弹弹选秀-截图"
+        ],
+        "focus": "[color:green]识别到特定装扮，正在执行操作。[/color]"
+    },
+    "弹弹选秀-点击喜欢": {
+        "enabled": true,
+        "timeout": 1000,
+        "action": "LongPress",
+        "target": [
+            475,
+            565,
+            0,
+            0
+        ],
+        "duration": 200,
+        "pre_delay": 0,
+        "pre_wait_freezes": 0,
+        "post_delay": 0,
+        "post_wait_freezes": 0,
+        "next": [
+            "弹弹选秀-截图"
         ]
     },
-    "弹弹选秀-点击喜欢截图": {
+    "弹弹选秀-截图": {
+        "enabled": true,
         "timeout": 1000,
         "action": "Custom",
-        "custom_action": "ShowLike",
-        "custom_action_param": {},
-        "focus": "[color:green]识别到特定装扮，正在执行操作并截图。[/color]"
+        "custom_action": "ShowSave",
+        "custom_action_param": {}
     },
     "弹弹选秀-识别结束": {
         "focus": "识别结束，正在返回主界面。",
