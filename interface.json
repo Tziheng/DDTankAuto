@@ -1,7 +1,7 @@
 {
     "name": "DDTankAuto",
-    "custom_title": "DDTankAuto v2.1.2",
-    "version": "v2.1.2",
+    "custom_title": "DDTankAuto v2.1.3",
+    "version": "v2.1.3",
     "url": "https://github.com/Tziheng/DDTankAuto",
     "controller": [
         {
@@ -31,6 +31,11 @@
     },
     "task": [
         {
+            "name": "蝶妖任务",
+            "entry": "蝶妖任务",
+            "doc": "每隔15分钟自动领取一次蝶妖奖励，并且执行下一次蝶妖派遣。\n可运行该任务的起始页面如下：游戏主界面，伴侣界面，，蝶妖森林界面。"
+        },
+        {
             "name": "测试agent",
             "entry": "测试agent",
             "doc": "测试功能"
@@ -55,18 +60,6 @@
             "option": [
                 "竞技场执行次数",
                 "选择竞技场模式"
-            ]
-        },
-        {
-            "name": "弹弹选秀",
-            "entry": "弹弹选秀",
-            "doc": "该任务用于进行弹弹选秀的自动化操作。\n会自动获取当前玩家的参选装扮，并在选秀投票页面中找到相似的装扮进行投票。\n可运行该任务的起始页面如下：游戏主界面，弹弹选秀主界面，时尚搭配赛界面。\n不选择截图自己装扮将沿用最后一次开启时的装扮进行投票。\n启动快速刷新有轻微可能被邀请界面打断。",
-            "option": [
-                "是否截图自己装扮",
-                "是否启动快速刷新",
-                "相似度最低值",
-                "是否点赞",
-                "持续时间"
             ]
         },
         {
@@ -600,43 +593,6 @@
             ],
             "default_case": "30分钟"
         },
-        "是否点赞": {
-            "cases": [
-                {
-                    "name": "点赞",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "不做任何操作",
-                    "pipeline_override": {
-                        "弹弹选秀-点击喜欢": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ],
-            "default_case": "点赞"
-        },
-        "是否启动快速刷新": {
-            "cases": [
-                {
-                    "name": "启动",
-                    "pipeline_override": {
-                        "弹弹选秀-退出重进当前界面": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "不启动",
-                    "pipeline_override": {
-                        "弹弹选秀-退出重进当前界面": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
         "选择竞技场模式": {
             "cases": [
                 {
@@ -648,146 +604,6 @@
                     "pipeline_override": {
                         "竞技场-点击自由战": {
                             "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "是否截图自己装扮": {
-            "cases": [
-                {
-                    "name": "是",
-                    "pipeline_override": {
-                        "弹弹选秀-点击修改搭配": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "否",
-                    "pipeline_override": {
-                        "弹弹选秀-点击修改搭配": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "相似度最低值": {
-            "cases": [
-                {
-                    "name": "10%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.10
-                        }
-                    }
-                },
-                {
-                    "name": "20%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.20
-                        }
-                    }
-                },
-                {
-                    "name": "40%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.40
-                        }
-                    }
-                },
-                {
-                    "name": "60%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.60
-                        }
-                    }
-                },
-                {
-                    "name": "65%（推荐）",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.65
-                        }
-                    }
-                },
-                {
-                    "name": "70%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.70
-                        }
-                    }
-                },
-                {
-                    "name": "75%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.75
-                        }
-                    }
-                },
-                {
-                    "name": "80%",
-                    "pipeline_override": {
-                        "弹弹选秀-识别到自己装扮": {
-                            "threshold": 0.80
-                        }
-                    }
-                }
-            ]
-        },
-        "持续时间": {
-            "cases": [
-                {
-                    "name": "1小时",
-                    "pipeline_override": {
-                        "弹弹选秀-识别": {
-                            "timeout": 3600000
-                        }
-                    }
-                },
-                {
-                    "name": "3小时",
-                    "pipeline_override": {
-                        "弹弹选秀-识别": {
-                            "timeout": 10800000
-                        }
-                    }
-                },
-                {
-                    "name": "6小时",
-                    "pipeline_override": {
-                        "弹弹选秀-识别": {
-                            "timeout": 21600000
-                        }
-                    }
-                },
-                {
-                    "name": "12小时",
-                    "pipeline_override": {
-                        "弹弹选秀-识别": {
-                            "timeout": 43200000
-                        }
-                    }
-                },
-                {
-                    "name": "24小时",
-                    "pipeline_override": {
-                        "弹弹选秀-识别": {
-                            "timeout": 86400000
-                        }
-                    }
-                },
-                {
-                    "name": "48小时",
-                    "pipeline_override": {
-                        "弹弹选秀-识别": {
-                            "timeout": 172800000
                         }
                     }
                 }
@@ -956,6 +772,14 @@
                     "pipeline_override": {
                         "多人副本-搜寻副本": {
                             "expected": "啵咕运动会"
+                        }
+                    }
+                },
+                {
+                    "name": "时空漩涡",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "时空漩涡"
                         }
                     }
                 }

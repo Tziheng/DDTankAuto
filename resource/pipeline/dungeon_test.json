@@ -8,7 +8,8 @@
         "recognition": "TemplateMatch",
         "template": [
             "主界面.png",
-            "主界面1.png"
+            "主界面1.png",
+            "主界面2.png"
         ],
         "green_mask": true,
         "next": [

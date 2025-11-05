@@ -53,15 +53,16 @@ class FlyAnswer(CustomAction):
                 best_match = process.extract(alltext, questionbank.keys(),limit=n)
                 
                 # 回答题目
-                output = "\n==============="
+                output = ""
                 for i in range(n-1,-1,-1):
                     question = best_match[i][0]
                     answer = questionbank[question]    
                     score = best_match[i][1]
-                    output += f"\n当前题目为：（置信度：{score:.0f}％）\n{question}\n"+f"该题答案：\n{answer}\n"
-                output += "===============\n"
+                    output += f"当前题目为：（相似度度：{score:.0f}％）\t{question}\t"+f"该题答案：\t{answer}"
                 if output != lastoutput:
+                    print("="*15)
                     logger.info(output)
+                    print("="*15)
                     lastoutput = output
             except:
                 pass

@@ -21,7 +21,11 @@
     },
     "领取福利-游戏主界面": {
         "recognition": "TemplateMatch",
-        "template": ["主界面.png", "主界面1.png"],
+        "template": [
+            "主界面.png",
+            "主界面1.png",
+            "主界面2.png"
+        ],
         "green_mask": true,
         "next": [
             "领取福利-点击福利按钮"
