@@ -1,0 +1,10 @@
+{
+    "秘境agent": {
+        "action": "Custom",
+        "custom_action": "FightAgent",
+        "custom_action_param": {
+            "mode": 0,
+            "times": 1
+        }
+    }
+}

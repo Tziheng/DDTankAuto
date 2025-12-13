@@ -61,8 +61,8 @@ class FlyAnswer(CustomAction):
                     output += f"当前题目为：（相似度度：{score:.0f}％）\t{question}\t"+f"该题答案：\t{answer}"
                 if output != lastoutput:
                     print("="*15)
+                    time.sleep(1)
                     logger.info(output)
-                    print("="*15)
                     lastoutput = output
             except:
                 pass

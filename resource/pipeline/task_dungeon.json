@@ -397,7 +397,6 @@
         "count": 15,
         "post_delay": 300,
         "next": [
-            "多人副本-第一次翻牌",
             "多人副本-结束界面1",
             "多人副本-结束界面2"
         ],
@@ -422,40 +421,6 @@
             50
         ],
         "expected": "关卡选择"
-    },
-    "多人副本-第一次翻牌": {
-        "recognition": "FeatureMatch",
-        "template": "spine/翻牌卡背.png",
-        "count": 15,
-        "action": "Click",
-        "post_delay": 300,
-        "next": [
-            "多人副本-第二次翻牌",
-            "多人副本-结束界面1",
-            "多人副本-结束界面2"
-        ]
-    },
-    "多人副本-第二次翻牌": {
-        "recognition": "FeatureMatch",
-        "template": "spine/翻牌卡背.png",
-        "count": 15,
-        "action": "Click",
-        "post_delay": 300,
-        "next": [
-            "多人副本-额外翻牌",
-            "多人副本-结束界面1",
-            "多人副本-结束界面2"
-        ]
-    },
-    "多人副本-额外翻牌": {
-        "recognition": "FeatureMatch",
-        "template": "spine/翻牌卡背.png",
-        "count": 15,
-        "action": "DoNothing",
-        "next": [
-            "多人副本-结束界面1",
-            "多人副本-结束界面2"
-        ]
     },
     "多人副本-副本列表下翻": {
         "recognition": "OCR",

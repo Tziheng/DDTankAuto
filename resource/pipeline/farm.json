@@ -1,3 +1,9 @@
 {
-    "农场自动": {}
+    "农场自动偷菜agent": {
+        "action": "Custom",
+        "custom_action": "FarmAgent",
+        "custom_action_param": {
+            
+        }
+    }
 }

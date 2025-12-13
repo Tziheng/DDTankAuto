@@ -1,5 +1,9 @@
 from datetime import datetime, timedelta
 import pytz
+import time
+
+def get_system_time():
+    return time.time()
 
 def get_current_time(style="%Y%m%d_%H%M%S"):
     return datetime.now().strftime(style)

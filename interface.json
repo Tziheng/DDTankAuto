@@ -31,6 +31,16 @@
     },
     "task": [
         {
+            "name": "自动秘境",
+            "entry": "秘境agent",
+            "doc": ""
+        },
+        {
+            "name": "农场自动偷菜",
+            "entry": "农场自动偷菜agent",
+            "doc": "该任务用于自动偷菜。\n可运行该任务的起始页面如下：游戏主界面，农场界面。"
+        },
+        {
             "name": "蝶妖任务",
             "entry": "蝶妖任务",
             "doc": "每隔15分钟自动领取一次蝶妖奖励，并且执行下一次蝶妖派遣。\n可运行该任务的起始页面如下：游戏主界面，伴侣界面，，蝶妖森林界面。"
@@ -47,11 +57,6 @@
             "option": [
                 "飞飞乐持续时间"
             ]
-        },
-        {
-            "name": "弹弹学院自动扫荡（正在开发中）",
-            "entry": "弹弹学院",
-            "doc": "功能即将上线，敬请期待！"
         },
         {
             "name": "竞技场自埋",
@@ -80,7 +85,6 @@
                 "副本难度",
                 "开启BOSS战",
                 "多人副本通过关卡数",
-                "是否额外翻牌",
                 "是否自动邀请机器人",
                 "开始战斗的最低房间人数"
             ],
@@ -212,100 +216,12 @@
                     }
                 },
                 {
-                    "name": "11",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 11
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "12",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 12
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "13",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 13
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "14",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 14
-                            }
-                        }
-                    }
-                },
-                {
                     "name": "15",
                     "pipeline_override": {
                         "多人副本agent": {
                             "custom_action_param": {
                                 "mode": 1,
                                 "times": 15
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "16",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 16
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "17",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 17
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "18",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 18
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "19",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 19
                             }
                         }
                     }
@@ -322,111 +238,45 @@
                     }
                 },
                 {
-                    "name": "21",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 21
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "22",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 22
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "23",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 23
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "24",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 24
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "25",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 25
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "26",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 26
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "27",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 27
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "28",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 28
-                            }
-                        }
-                    }
-                },
-                {
-                    "name": "29",
-                    "pipeline_override": {
-                        "多人副本agent": {
-                            "custom_action_param": {
-                                "mode": 1,
-                                "times": 29
-                            }
-                        }
-                    }
-                },
-                {
                     "name": "30",
                     "pipeline_override": {
                         "多人副本agent": {
                             "custom_action_param": {
                                 "mode": 1,
                                 "times": 30
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "50",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 50
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "100",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 100
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "150",
+                    "pipeline_override": {
+                        "多人副本agent": {
+                            "custom_action_param": {
+                                "mode": 1,
+                                "times": 150
                             }
                         }
                     }
@@ -678,23 +528,6 @@
                 }
             ],
             "default_case": "2人"
-        },
-        "是否额外翻牌": {
-            "cases": [
-                {
-                    "name": "额外翻牌",
-                    "pipeline_override": {
-                        "多人副本-额外翻牌": {
-                            "action": "Click"
-                        }
-                    }
-                },
-                {
-                    "name": "不额外翻牌",
-                    "pipeline_override": {}
-                }
-            ],
-            "default_case": "额外翻牌"
         },
         "是否自动邀请机器人": {
             "cases": [
