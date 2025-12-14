@@ -3,40 +3,44 @@
         "next": [
             "游戏启动状态"
         ],
-        "focus": "正在开始启动游戏。"
+        "focus": {
+            "Node.Recognition.Starting": "正在开始游戏",
+            "Node.Action.Starting": "游戏启动成功",
+            "Node.PipelineNode.Starting": "正在执行任务"
+        }
     },
     "游戏启动状态": {
         "next": [
-            "关闭弹弹堂公告界面",
-            "关闭弹弹时报界面",
-            "关闭限时特惠界面",
-            "关闭每日限购界面",
-            "关闭首充豪礼界面",
-            "关闭成长基金界面",
-            "关闭获得新宝箱界面",
-            "关闭恭喜你获得界面",
-            "关闭恭喜升级啦界面",
-            "关闭幸运馈赠界面",
-            "关闭邀请界面",
-            "关闭网络异常界面",
-            "关闭异地登录界面",
+            "[JumpBack]关闭弹弹堂公告界面",
+            "[JumpBack]关闭弹弹时报界面",
+            "[JumpBack]关闭限时特惠界面",
+            "[JumpBack]关闭每日限购界面",
+            "[JumpBack]关闭首充豪礼界面",
+            "[JumpBack]关闭成长基金界面",
+            "[JumpBack]关闭获得新宝箱界面",
+            "[JumpBack]关闭恭喜你获得界面",
+            "[JumpBack]关闭恭喜升级啦界面",
+            "[JumpBack]关闭幸运馈赠界面",
+            "[JumpBack]关闭邀请界面",
+            "[JumpBack]关闭网络异常界面",
+            "[JumpBack]关闭异地登录界面",
             "进入游戏界面",
             "游戏主界面"
         ]
     },
     "主界面状态": {
         "next": [
-            "关闭弹弹时报界面",
-            "关闭限时特惠界面",
-            "关闭每日限购界面",
-            "关闭首充豪礼界面",
-            "关闭成长基金界面",
-            "关闭获得新宝箱界面",
-            "关闭恭喜你获得界面",
-            "关闭恭喜升级啦界面",
-            "关闭邀请界面",
-            "关闭网络异常界面",
-            "关闭异地登录界面",
+            "[JumpBack]关闭弹弹时报界面",
+            "[JumpBack]关闭限时特惠界面",
+            "[JumpBack]关闭每日限购界面",
+            "[JumpBack]关闭首充豪礼界面",
+            "[JumpBack]关闭成长基金界面",
+            "[JumpBack]关闭获得新宝箱界面",
+            "[JumpBack]关闭恭喜你获得界面",
+            "[JumpBack]关闭恭喜升级啦界面",
+            "[JumpBack]关闭邀请界面",
+            "[JumpBack]关闭网络异常界面",
+            "[JumpBack]关闭异地登录界面",
             "游戏主界面",
             "进入游戏界面"
         ]
@@ -50,7 +54,9 @@
         ],
         "green_mask": true,
         "action": "StopTask",
-        "focus": "[color:green]已进入到游戏主界面，任务完成！[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "[color:green]已进入到游戏主界面，任务完成！[/color]"
+        }
     },
     "进入游戏界面": {
         "recognition": "TemplateMatch",

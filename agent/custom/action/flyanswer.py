@@ -21,18 +21,19 @@ class FlyAnswer(CustomAction):
         args = {     
             "duration": 3600,
             "n":1,
+            "speed":0.5
         }
         if argv.custom_action_param is not None:
             args.update(json.loads(argv.custom_action_param))
         duration = args["duration"]
         n = args["n"]
+        speed = args["speed"]
         logger.debug(f"args：{args}")
 
         # 读取题库
         filepath = os.path.join(RESOURCE_DIR,"text/flyquestion.csv")
         questionbank = dict(pd.read_csv(filepath).values.tolist())
 
-        logger.debug(f"题库：{questionbank}")
         
         # 最长持续时间
         lastoutput = ""
@@ -58,15 +59,22 @@ class FlyAnswer(CustomAction):
                     question = best_match[i][0]
                     answer = questionbank[question]    
                     score = best_match[i][1]
-                    output += f"当前题目为：（相似度度：{score:.0f}％）\t{question}\t"+f"该题答案：\t{answer}"
+                    output += f"当前题目为：（相似度：{score:.0f}％） {question} "+f"该题答案： {answer}"
                 if output != lastoutput:
-                    print("="*15)
-                    time.sleep(1)
-                    logger.info(output)
+                    time.sleep(speed)
+                    logger.info(f"当前题目为：（相似度：{score:.0f}％）")
+                    time.sleep(speed)
+                    logger.info(f"{question}")
+                    time.sleep(speed)
+                    logger.info(f"该题答案：")
+                    time.sleep(speed)
+                    logger.info(f"{answer}")
+                    time.sleep(speed)
+                    logger.info("")
                     lastoutput = output
             except:
                 pass
-            time.sleep(1)
+            time.sleep(speed)
          
         logger.info("飞飞乐脚本运行结束！")
 

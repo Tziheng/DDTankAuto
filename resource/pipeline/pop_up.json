@@ -1,6 +1,5 @@
 {
     "隐藏鼠标至左上角": {
-        "is_sub": true,
         "action": "Swipe",
         "begin": [
             0,
@@ -16,7 +15,6 @@
         ]
     },
     "关闭弹弹堂公告界面": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "弹弹堂公告.png"
@@ -31,7 +29,6 @@
         "focus": "[color:yellow]识别到弹弹堂公告界面，正在关闭。[/color]"
     },
     "关闭弹弹时报界面": {
-        "is_sub": true,
         "recognition": "FeatureMatch",
         "template": [
             "uidynamic/弹弹时报green.png"
@@ -47,7 +44,6 @@
         "focus": "[color:yellow]识别到弹弹时报界面，正在关闭。[/color]"
     },
     "关闭限时特惠界面": {
-        "is_sub": true,
         "recognition": "FeatureMatch",
         "template": [
             "uidynamic/限时特惠green.png"
@@ -63,7 +59,6 @@
         "focus": "[color:yellow]识别到限时特惠界面，正在关闭。[/color]"
     },
     "关闭每日限购界面": {
-        "is_sub": true,
         "recognition": "FeatureMatch",
         "template": [
             "uidynamic/每日限购green.png"
@@ -79,7 +74,6 @@
         "focus": "[color:yellow]识别到每日限购界面，正在关闭。[/color]"
     },
     "关闭首充豪礼界面": {
-        "is_sub": true,
         "recognition": "FeatureMatch",
         "template": [
             "fairygui/首充豪礼.png"
@@ -95,7 +89,6 @@
         "focus": "[color:yellow]识别到首充豪礼界面，正在关闭。[/color]"
     },
     "关闭成长基金界面": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "成长基金.png"
@@ -116,7 +109,6 @@
         "focus": "[color:yellow]识别到成长基金界面，正在关闭。[/color]"
     },
     "关闭获得新宝箱界面": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "获得新宝箱.png"
@@ -138,7 +130,6 @@
         "focus": "[color:yellow]识别到获得新宝箱界面，点击确认。[/color]"
     },
     "关闭邀请界面": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             300,
@@ -179,7 +170,6 @@
         "focus": "[color:yellow]点击取消接受邀请。[/color]"
     },
     "关闭异地登录界面": {
-        "is_sub": true,
         "recognition": "OCR",
         "roi": [
             300,
@@ -200,7 +190,6 @@
         "focus": "[color:yellow]识别到异地登录界面，点击确认。[/color]"
     },
     "关闭网络异常界面": {
-        "is_sub": true,
         "recognition": "OCR",
         "roi": [
             300,
@@ -221,7 +210,6 @@
         "focus": "[color:yellow]识别到网络异常界面，点击确认。[/color]"
     },
     "等待中界面": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "等待中.png"
@@ -230,7 +218,6 @@
         "focus": "[color:yellow]识别到等待中界面。[/color]"
     },
     "关闭恭喜升级啦界面": {
-        "is_sub": true,
         "recognition": "OCR",
         "roi": [
             434,
@@ -249,7 +236,6 @@
         "focus": "[color:yellow]识别到恭喜升级啦界面，正在关闭。[/color]"
     },
     "关闭恭喜你获得界面": {
-        "is_sub": true,
         "recognition": "OCR",
         "roi": [
             434,
@@ -268,7 +254,6 @@
         "focus": "[color:yellow]识别到获得奖励界面，正在关闭。[/color]"
     },
     "关闭福利界面": {
-        "is_sub": true,
         "recognition": "OCR",
         "roi": [
             564,
@@ -287,7 +272,6 @@
         "focus": "[color:yellow]识别到福利界面，正在关闭。[/color]"
     },
     "关闭幸运馈赠界面": {
-        "is_sub": true,
         "recognition": "FeatureMatch",
         "template": [
             "uidynamic/幸运馈赠green.png"
@@ -303,7 +287,6 @@
         "focus": "[color:yellow]识别到幸运馈赠界面，正在关闭。[/color]"
     },
     "关闭活力不足界面": {
-        "is_sub": true,
         "recognition": "OCR",
         "roi": [
             309,
