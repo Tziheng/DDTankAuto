@@ -3,6 +3,7 @@ from .FlyAnswer import *
 from .FightAgent import *
 from .FarmAgent import *
 from .MouseAgent import *
+from .ReverseAgent import *
 
 __all__ = [
     
@@ -11,5 +12,6 @@ __all__ = [
     "FightAgent",
     "FarmAgent",
     "MouseAgent",
+    "ReverseAgent",
 
     ]

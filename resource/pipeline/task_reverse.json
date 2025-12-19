@@ -1,0 +1,10 @@
+{
+    "翻转操作键位": {
+        "action": "Custom",
+        "custom_action": "ReverseAgent",
+        "custom_action_param": {
+            "on_button": "-",
+            "off_button": "="
+        }
+    }
+}

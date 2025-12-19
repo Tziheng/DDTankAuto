@@ -108,7 +108,7 @@ def resize_notepad_width():
     init_target_width=1202
     init_target_height=720
     init_white_height=44
-    windows = list_windows_by_title("^新弹弹堂$")
+    windows = list_windows_by_title("^(新弹弹堂)|(小游戏)$")
     if len(windows)==0:
         logger.warning("未找到符合条件的窗口，请确保已打开新弹弹堂窗口！")
         return
