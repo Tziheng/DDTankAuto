@@ -11,7 +11,7 @@ class SpireAgent(CustomAction):
         self,
         context: Context,
         argv: CustomAction.RunArg,
-    ) -> bool:
+    ) -> CustomAction.RunResult:
         logger.debug("SpireAgent is running!")
         logger.debug(argv.custom_action_param)
         

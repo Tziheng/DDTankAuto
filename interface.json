@@ -2,8 +2,8 @@
     "contact": "CONTACT",
     "license": "LICENSE",
     "name": "DDTankAuto",
-    "custom_title": "DDTankAuto v3.0.0",
-    "version": "v3.0.0",
+    "custom_title": "DDTankAuto v3.0.1",
+    "version": "v3.0.1",
     "icon": "{PROJECT_DIR}/icon.png",
     "github": "https://github.com/Tziheng/DDTankAuto",
     "interface_version": 2,
@@ -38,6 +38,15 @@
         ]
     },
     "task": [
+        {
+            "name": "连点器",
+            "entry": "连点器agent",
+            "description": "按下按键后，会在当前鼠标所在位置连点，松开按键后停止连点。",
+            "option": [
+                "连点参数"
+            ],
+            "default_check": false
+        },
         {
             "name": "自动秘境（开发中）",
             "entry": "秘境agent",
@@ -103,6 +112,31 @@
         }
     ],
     "option": {
+        "连点参数": {
+            "type": "input",
+            "label": "连点触发按键",
+            "inputs": [
+                {
+                    "name": "触发按键",
+                    "pipeline_type": "string",
+                    "default": "`"
+                },
+                {
+                    "name": "连点间隔（毫秒）",
+                    "pipeline_type": "int",
+                    "default": "100",
+                    "verify": "^[1-9]\\d*$"
+                }
+            ],
+            "pipeline_override": {
+                "连点器agent": {
+                    "custom_action_param": {
+                        "key": "{触发按键}",
+                        "period": "{连点间隔（毫秒）}"
+                    }
+                }
+            }
+        },
         "多人副本通过关卡数": {
             "type": "input",
             "label": "通过关卡数",
@@ -112,7 +146,7 @@
                     "name": "通过关卡数",
                     "pipeline_type": "int",
                     "default": "10",
-                    "verify": "^(0|[1-9]\\d*)$"
+                    "verify": "^[1-9]\\d$"
                 }
             ],
             "pipeline_override": {
@@ -132,7 +166,7 @@
                     "name": "作战次数",
                     "pipeline_type": "int",
                     "default": "10",
-                    "verify": "^(0|[1-9]\\d*)$"
+                    "verify": "^[1-9]\\d$"
                 }
             ],
             "pipeline_override": {

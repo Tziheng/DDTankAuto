@@ -1,9 +1,12 @@
+from math import log
 from .logger import *
 from .config import PROJECT_DIR, RESOURCE_DIR
+from .time import *
 
 try:
-    from .time import *
+    from .setWindows import *
 except ImportError:
-    logger.warning("utils moudule import failed")
+    logger.warning("some utils model import failed")
+
 
 

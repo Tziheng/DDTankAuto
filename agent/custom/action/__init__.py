@@ -1,16 +1,15 @@
-from .actiontest import *
-from .saveimg import *
-from .ShowSave import *
-from .flyanswer import *
+from .SaveImg import *
+from .FlyAnswer import *
 from .FightAgent import *
 from .FarmAgent import *
+from .MouseAgent import *
 
 __all__ = [
-    "MyCustomAction",
+    
     "SaveImg",
-    "ShowSave",
     "FlyAnswer",
     "FightAgent",
-    "FarmAgent"
+    "FarmAgent",
+    "MouseAgent",
 
     ]

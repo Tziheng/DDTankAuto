@@ -1,0 +1,10 @@
+{
+    "连点器agent": {
+        "action": "Custom",
+        "custom_action": "MouseAgent",
+        "custom_action_param": {
+            "period": 100,
+            "key": "`"
+        }
+    }
+}

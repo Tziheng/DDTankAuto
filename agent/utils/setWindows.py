@@ -1,10 +1,15 @@
 # 调整窗口大小等功能
 
-from .utils.logger import logger
+from .logger import logger
+import win32gui
+import win32process
+import win32con
+import re
+import os
+import math
 
 def list_all_windows():
-    import win32gui
-    import win32process
+    
 
     """列出所有顶级窗口的标题、句柄、类名、位置尺寸、进程ID及进程名称、EXE路径"""
     windows = []
@@ -38,8 +43,6 @@ def list_all_windows():
 
 def list_windows_by_title(title):
   
-    import re
-
     selected_windows = []
     """根据窗口标题查找窗口句柄"""
     windows = list_all_windows()
@@ -79,7 +82,7 @@ def convert_to_crlf_if_needed(file_path):
 
 
 def batch_convert_directory(directory, extensions=['.md']):
-    import os
+    
     """批量转换目录下指定扩展名的文件"""
     for root, _, files in os.walk(directory):
         for filename in files:
@@ -89,7 +92,7 @@ def batch_convert_directory(directory, extensions=['.md']):
     # print("Conversion completed.")
 
 def get_window_client_rect(hwnd):
-    import win32gui
+    
  
 
     """获取窗口的客户区坐标（仅内容区域）"""
@@ -100,9 +103,7 @@ def get_window_client_rect(hwnd):
     return (screen_left, screen_top, screen_right, screen_bottom)
 
 def resize_notepad_width():
-    import math
-    import win32gui
-    import win32con
+ 
   
     init_target_width=1202
     init_target_height=720

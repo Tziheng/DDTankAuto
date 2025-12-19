@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 
 import os
+
 import sys
 import json
 import subprocess
 from pathlib import Path
 
+from winioctlcon import Unknown
+
 # utf-8
-sys.stdout.reconfigure(encoding="utf-8")
+os.environ["PYTHONIOENCODING"] = "utf-8"
 os.system("chcp 65001")
 
 
@@ -19,8 +22,7 @@ project_root_dir = os.path.dirname(current_script_dir)  # 假定的项目根目�
 # 更改CWD到项目根目录
 if os.getcwd() != project_root_dir:
     os.chdir(project_root_dir)
-print(f"set cwd: {os.getcwd()}")
-
+ 
 # 将脚本自身的目录，和项目目录添加到sys.path，以便导入utils、maa等模块
 sys.path.insert(0, current_script_dir)
 sys.path.insert(0, project_root_dir)
@@ -128,10 +130,7 @@ def ensure_venv_and_relaunch_if_needed():
 
 ### 配置相关 ###
 
-
-
-
-def read_pip_config() -> dict:
+def read_pip_config() -> dict[str, str | bool]:
     config_dir = Path("./config")
     config_dir.mkdir(exist_ok=True)
     config_path = config_dir / "pip_config.json"
@@ -186,6 +185,10 @@ def _run_pip_command(cmd_args: list, operation_name: str) -> bool:
             universal_newlines=True,
         )
 
+        if not process.stdout:
+            logger.error("无法启动子进程")
+            return False
+
         # 收集所有输出用于日志记录
         all_output = []
 
@@ -193,7 +196,7 @@ def _run_pip_command(cmd_args: list, operation_name: str) -> bool:
         for line in iter(process.stdout.readline, ""):
             line = line.rstrip("\n\r")
             if line.strip():  # 只显示非空行
-                # print(line)  # 实时显示到终端
+                # logger.info(line)  # 实时显示到终端
                 all_output.append(line)  # 收集到列表中
 
         # 等待进程结束
@@ -217,7 +220,7 @@ def _run_pip_command(cmd_args: list, operation_name: str) -> bool:
 
 
 
-def install_requirements(req_file="requirements.txt", pip_config=None) -> bool:
+def install_requirements( pip_config: dict,req_file="requirements.txt" ) -> bool:
     req_path = Path(project_root_dir) / req_file  # 确保相对于项目根目录
     if not req_path.exists():
         logger.error(f"{req_file} 文件不存在于 {req_path.resolve()}")
@@ -392,26 +395,39 @@ def main():
     logger.info("已经将以下窗口调整至合适大小")
 
     
+    # 清理模块缓存
+    utils_modules = [
+        name for name in list(sys.modules.keys()) if name.startswith("utils")
+    ]
+    for module_name in utils_modules:
+        del sys.modules[module_name]
+
+    # 动态导入 utils 的所有内容
+    import utils
+    import importlib
+
+    importlib.reload(utils)
+
+    # 将 utils 的所有公共属性导入到当前命名空间
+    for attr_name in dir(utils):
+        if not attr_name.startswith("_"):
+            globals()[attr_name] = getattr(utils, attr_name)
 
     # 执行公告的转换  
     try:
-        from utils import RESOURCE_DIR
-        from agent import setwindows
+        from utils import RESOURCE_DIR,setWindows
         folder_path = os.path.join(RESOURCE_DIR, "announcement")
-        setwindows.batch_convert_directory(folder_path)
+        setWindows.batch_convert_directory(folder_path)
     except:
         pass
 
     # 执行窗口大小调整
     try:
-        from agent import setwindows
-        setwindows.resize_notepad_width()
+        from utils import setWindows
+        setWindows.resize_notepad_width()
     except:
-        logger.error("调整窗口大小失败，可能是权限不足，请以管理员身份重启 DDTankAuto！")
         return 0
     
-
-
     agent(is_dev_mode=is_dev_mode)
 
 

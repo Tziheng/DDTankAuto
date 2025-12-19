@@ -2,6 +2,7 @@ from datetime import datetime
 from maa.agent.agent_server import AgentServer
 from maa.custom_action import CustomAction
 from maa.context import Context
+from maa.define import OCRResult
 from utils import logger,RESOURCE_DIR,time
 import os
 import json
@@ -16,12 +17,12 @@ class FlyAnswer(CustomAction):
         self,
         context: Context,
         argv: CustomAction.RunArg,
-    ) -> bool:
+    ) -> CustomAction.RunResult:
         logger.info("飞飞乐脚本开始运行！")
         args = {     
             "duration": 3600,
             "n":1,
-            "speed":0.5
+            "speed":0.3
         }
         if argv.custom_action_param is not None:
             args.update(json.loads(argv.custom_action_param))
@@ -46,10 +47,11 @@ class FlyAnswer(CustomAction):
                     entry="OCR",
                     pipeline_override={"OCR":{"roi" : [250,180,750,300]}},
                     )
-                recodetail = taskdetail.nodes[0].recognition
-                all_results = recodetail.all_results
-                alltext = "".join([_.text for _ in all_results])
-                
+                if taskdetail is not None:
+                    recodetail = taskdetail.nodes[0].recognition
+                    all_results = recodetail.all_results
+                    alltext = "".join([_.text for _ in all_results if isinstance(_, OCRResult)])
+                    
                 # 匹配题目
                 best_match = process.extract(alltext, questionbank.keys(),limit=n)
                 

@@ -13,7 +13,7 @@ class SaveImg(CustomAction):
         self,
         context: Context,
         argv: CustomAction.RunArg,
-    ) -> bool:
+    ) -> CustomAction.RunResult :
         logger.debug("SaveImg is running!")
         if argv.custom_action_param is not None:
             logger.debug(argv.custom_action_param)
@@ -39,7 +39,7 @@ class SaveImg(CustomAction):
             x, y, w, h = args["roi"]
             if w<=0 or h<=0 or x<0 or y<0 or x+w > width or y+h > height:
                 logger.warning(f"roi超出屏幕范围,实际窗口范围为({width},{height})")
-                return False
+                return CustomAction.RunResult(success=False)
         else:
             x, y, w, h = 0, 0, width, height
         # BGR2RGB

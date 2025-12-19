@@ -10,7 +10,7 @@ class FarmAgent(CustomAction):
         self,
         context: Context,
         argv: CustomAction.RunArg,
-    ) -> bool:
+    ) -> CustomAction.RunResult:
         logger.debug("FarmAgent is running!")
         logger.debug(argv.custom_action_param)
         args = {
@@ -20,19 +20,5 @@ class FarmAgent(CustomAction):
             args.update(json.loads(argv.custom_action_param))
         logger.debug(args)
 
-        start_time = time.get_current_time()
-
-        while time.get_current_time() - start_time < args["time"]:
-
-            if context.tasker.stopping:
-                logger.info("FarmAgent is stopping!")
-                return CustomAction.RunResult(success=False)
-
-            
-
-
-
-
-
-
+  
         return CustomAction.RunResult(success=True)

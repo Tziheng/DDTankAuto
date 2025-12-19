@@ -11,7 +11,7 @@ class FightAgent(CustomAction):
         self,
         context: Context,
         argv: CustomAction.RunArg,
-    ) -> bool:
+    ) -> CustomAction.RunResult:
         logger.debug("FightAgent is running!")
         logger.debug(argv.custom_action_param)
         
@@ -26,10 +26,15 @@ class FightAgent(CustomAction):
         times = args["times"]
         mode = args["mode"]
 
+        if mode == 0:
+            logger.info(f"开始执行竞技场自埋任务，共计{times}次！")
+        else:
+            logger.info(f"开始执行多人副本任务，共计{times}次！")
+        logger.info("注意停止任务时，需要完整的完成当前关卡后，该任务才会停止！")
         
         for i in range(times):
             if context.tasker.stopping:
-                logger.info("FightAgent is stopping!")
+                logger.info("任务已停止")
                 return CustomAction.RunResult(success=False)
             if mode == 0:
                 logger.info(f"开始执行第{i+1}次竞技场自埋任务！")

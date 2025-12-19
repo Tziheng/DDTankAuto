@@ -13,6 +13,7 @@ resource/image/**/[0-9][0-9][0-9]*
 !*.html
 !interface.json
 !.gitignore
+!CONTACT
 **/__pycache__
 **/Thumbs.db
 **/tmp
