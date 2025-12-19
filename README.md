@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-  <img alt="LOGO" src="Assets/logo.png" width="256" height="256" />
+  <img alt="LOGO" src="./Assets/logo.png" width="256" height="256" />
 </p>
 
 <div align="center">
@@ -30,7 +30,7 @@ DDTankAuto 是一款开源的自动化脚本工具，可以帮助你轻松完成
 
 ## 使用
 
-请仔细阅读[使用手册](resource\announcement\0.md)
+请仔细阅读[使用手册](./resource/announcement/0.md)
 
 ## 鸣谢
 
