@@ -2,12 +2,15 @@
 !resource/
 !Assets/
 !agent/
+!tools/
 !resource/**
 !Assets/**
 !agent/**
+!tools/**
 resource/image/**/[0-9][0-9][0-9]*
 !LICENSE
 !*.md
+!*.html
 !interface.json
 !.gitignore
 **/__pycache__
