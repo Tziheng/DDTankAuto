@@ -6,13 +6,9 @@
 !Assets/**
 !agent/**
 resource/image/**/[0-9][0-9][0-9]*
-resource/image/show_output/
-resource/image/show/
 !LICENSE
 !*.md
 !interface.json
-!设置窗口大小.exe
-!使用手册.pdf
 !.gitignore
 **/__pycache__
 **/Thumbs.db
