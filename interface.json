@@ -57,7 +57,12 @@
             "name": "农场自动偷菜（开发中）",
             "entry": "农场自动偷菜agent",
             "description": "<span style=\"color:darkgray;font-size:15px\">该任务用于自动偷菜。</span>\n<span style=\"color:orange;font-size:15px\">可运行该任务的起始页面如下：游戏主界面，农场界面。</span>",
-            "default_check": false
+            "option": [
+                {
+                    "name": "农场自动偷菜参数",
+                    "index": 0
+                }
+            ]
         },
         {
             "name": "蝶妖任务",
@@ -452,6 +457,62 @@
                 }
             ],
             "default_case": "困难"
+        },
+        "农场自动偷菜参数": {
+            "type": "select",
+            "label": "操作类型",
+            "cases": [
+                {
+                    "name": "偷菜",
+                    "pipeline_override": {
+                        "农场-点击偷菜": { "enabled": true },
+                        "农场-点击浇水": { "enabled": false },
+                        "农场-点击施肥": { "enabled": false },
+                        "农场-点击摇一摇": { "enabled": false },
+                        "农场-点击列表全部": { "enabled": false }
+                    }
+                },
+                {
+                    "name": "浇水",
+                    "pipeline_override": {
+                        "农场-点击偷菜": { "enabled": false },
+                        "农场-点击浇水": { "enabled": true },
+                        "农场-点击施肥": { "enabled": false },
+                        "农场-点击摇一摇": { "enabled": false },
+                        "农场-点击列表全部": { "enabled": false }
+                    }
+                },
+                {
+                    "name": "施肥",
+                    "pipeline_override": {
+                        "农场-点击偷菜": { "enabled": false },
+                        "农场-点击浇水": { "enabled": false },
+                        "农场-点击施肥": { "enabled": true },
+                        "农场-点击摇一摇": { "enabled": false },
+                        "农场-点击列表全部": { "enabled": false }
+                    }
+                },{
+                    "name": "摇一摇",
+                    "pipeline_override": {
+                        "农场-点击偷菜": { "enabled": false },
+                        "农场-点击浇水": { "enabled": false },
+                        "农场-点击施肥": { "enabled": false },
+                        "农场-点击摇一摇": { "enabled": true },
+                        "农场-点击列表全部": { "enabled": false }
+                    }
+                },
+                {
+                    "name": "全部",
+                    "pipeline_override": {
+                        "农场-点击偷菜": { "enabled": false },
+                        "农场-点击浇水": { "enabled": false },
+                        "农场-点击施肥": { "enabled": false },
+                        "农场-点击摇一摇": { "enabled": false },
+                        "农场-点击列表全部": { "enabled": true }
+                    }
+                }
+            ],
+            "default_case": "全部"
         }
     }
 }

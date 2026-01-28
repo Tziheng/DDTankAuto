@@ -1,9 +1,144 @@
 {
     "农场自动偷菜agent": {
-        "action": "Custom",
-        "custom_action": "FarmAgent",
-        "custom_action_param": {
-            
-        }
+        "timeout": 60000,
+        "next": [
+            "农场-打开好友栏"
+        ],
+        "focus": "开始执行农场自动偷菜任务"
+    },
+
+    "农场-打开好友栏": {
+        "action": "Click",
+        "target": [1200, 360, 1, 1],
+        "next": [
+            "农场-点击全部按钮"
+        ]
+    },
+
+    "农场-点击全部按钮": {
+        "recognition": "OCR",
+        "roi": [1020, 120, 180, 160],
+        "expected": "全部",
+        "action": "Click",
+        "next": [
+            "农场-展开操作列表"
+        ]
+    },
+
+    "农场-展开操作列表": {
+        "action": "Click",
+        "target": [300, 720, 0, 0],
+        "next": [
+            "农场-点击偷菜",
+            "农场-点击浇水",
+            "农场-点击施肥",
+            "农场-点击摇一摇",
+            "农场-点击列表全部"
+        ]
+    },
+
+    "农场-点击浇水": {
+        "enabled": true,
+        "action": "Click",
+        "target": [1042, 215, 0, 0],
+        "next": ["农场-好友列表"]
+    },
+
+    "农场-点击施肥": {
+        "enabled": false,
+        "action": "Click",
+        "target": [1042, 250, 0, 0],
+        "next": ["农场-好友列表"]
+    },
+
+
+
+    "农场-点击偷菜": {
+        "enabled": false,
+        "action": "Click",
+        "target": [1042, 284, 0, 0],
+        "next": ["农场-好友列表"]
+    },
+
+
+
+
+    "农场-点击摇一摇": {
+        "enabled": false,
+        "action": "Click",
+        "target": [1042, 320, 0, 0],
+        "next": ["农场-好友列表"]
+    },
+
+
+    "农场-点击列表全部": {
+        "enabled": false,
+        "action": "Click",
+        "target": [1042, 356, 0, 0],
+        "next": ["农场-好友列表"]
+    },
+
+
+    "农场-点击列表全部": {
+        "enabled": false,
+        "recognition": "OCR",
+        "roi": [250, 600, 300, 200],
+        "expected": "全部",
+        "action": "Click",
+        "next": [
+            "农场-好友列表循环"
+        ]
+    },
+
+    "农场-好友列表循环": {
+        "next": [
+            "农场-点击好友",
+            "农场-好友列表下滑"
+        ]
+    },
+
+    "农场-点击好友": {
+        "recognition": "TemplateMatch",
+        "template": "ui/friend_entry.png",
+        "roi": [100, 200, 900, 400],
+        "action": "Click",
+        "next": [
+            "农场-进入好友家园"
+        ]
+    },
+
+    "农场-进入好友家园": {
+        "recognition": "OCR",
+        "roi": [500, 50, 200, 60],
+        "expected": "家园",
+        "next": [
+            "农场-执行操作"
+        ]
+    },
+
+    "农场-执行操作": {
+        "recognition": "TemplateMatch",
+        "template": "ui/operate.png",
+        "action": "Click",
+        "next": [
+            "农场-返回好友列表"
+        ]
+    },
+
+    "农场-返回好友列表": {
+        "action": "Click",
+        "target": [50, 50, 0, 0],
+        "next": [
+            "农场-好友列表下滑"
+        ]
+    },
+
+    "农场-好友列表下滑": {
+        "action": "Swipe",
+        "target": [600, 600, 600, 300],
+        "next": [
+            "农场-好友列表循环"
+        ]
     }
 }
+
