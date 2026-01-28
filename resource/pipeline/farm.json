@@ -54,10 +54,10 @@
 
 
     "农场-点击偷菜": {
-        "enabled": false,
+        "enabled": true,
         "action": "Click",
         "target": [1042, 284, 0, 0],
-        "next": ["农场-好友列表"]
+        "next": ["农场-好友列表循环"]
     },
 
 
@@ -108,20 +108,52 @@
     },
 
     "农场-进入好友家园": {
-        "recognition": "OCR",
-        "roi": [500, 50, 200, 60],
-        "expected": "家园",
+        "action": "Click",
+        "target": [950, 220, 0, 0],
         "next": [
-            "农场-执行操作"
+            "农场-进入农场"
         ]
     },
 
-    "农场-执行操作": {
-        "recognition": "TemplateMatch",
-        "template": "ui/operate.png",
+    "农场-进入农场": {
+        "action": "Click",
+        "target": [500, 350, 0, 0],
+        "next": [
+            "农场-进入菜园"
+        ]
+    },
+
+    "农场-进入菜园": {
+        "action": "Click",
+        "target": [250, 350, 0, 0],
+        "next": [
+            "农场-查找收割符号"
+        ]
+    },
+
+    "农场-查找收割符号": {
+        "recognition": "OCR",
+        "roi": [100, 200, 900, 500],
+        "expected": "收割",
         "action": "Click",
         "next": [
-            "农场-返回好友列表"
+            "农场-点击镰刀"
+        ]
+    },
+
+    "农场-点击蔬菜": {
+        "action": "Click",
+        "target": [300, 400, 0, 0],
+        "next": [
+            "农场-点击镰刀"
+        ]
+    },
+
+    "农场-点击镰刀": {
+        "action": "Click",
+        "target": [500, 550, 0, 0],
+        "next": [
+            "农场-查找收割符号"
         ]
     },
 
@@ -129,7 +161,7 @@
         "action": "Click",
         "target": [50, 50, 0, 0],
         "next": [
-            "农场-好友列表下滑"
+            "农场-好友列表循环"
         ]
     },
 
