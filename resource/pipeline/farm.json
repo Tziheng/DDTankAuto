@@ -3,7 +3,87 @@
         "action": "Custom",
         "custom_action": "FarmAgent",
         "custom_action_param": {
-            
+            "duration": 3600
         }
+    },
+    "农场-打开好友栏": {
+        "action": "Click",
+        "target": [
+            1200,
+            360,
+            1,
+            1
+        ]
+    },
+    "农场-识别列表好友": {
+        "recognition": "TemplateMatch",
+        "template": "农场好友.png",
+        "roi": [
+            0,
+            0,
+            0,
+            0
+        ],
+    },
+    "农场-识别好友名字": {
+        "recognition": "OCR",
+        "expected": [],
+        "roi_offset": [
+            0,
+            0,
+            0,
+            0
+        ],
+    },
+    "农场-点击好友农场": {
+        "action": "Click",
+        "target": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "target_offset": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "农场-进入好友菜园"
+        ]
+    },
+    "农场-进入好友菜园": {
+        "action": "Click",
+        "target": [
+            250,
+            350,
+            0,
+            0
+        ],
+    },
+    "农场-点击菜": {
+        "action": "Click",
+        "target": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "农场-点击镰刀"
+        ]
+    },
+    "农场-点击镰刀": {
+        "action": "Click"
+    },
+    "农场-识别目标菜": {
+        "recognition": "FeatureMatch",
+        "template": [
+            "spine/霓虹番茄.png",
+            "spine/紫罗兰.png",
+            "spine/水晶葡萄.png",
+            "spine/水晶蘑菇.png"
+        ]
     }
 }

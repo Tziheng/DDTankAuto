@@ -57,7 +57,9 @@
             "name": "农场自动偷菜（开发中）",
             "entry": "农场自动偷菜agent",
             "description": "<span style=\"color:darkgray;font-size:15px\">该任务用于自动偷菜。</span>\n<span style=\"color:orange;font-size:15px\">可运行该任务的起始页面如下：游戏主界面，农场界面。</span>",
-            "default_check": false
+            "option": [
+                "农场自动偷菜参数"
+            ]
         },
         {
             "name": "蝶妖任务",
@@ -112,6 +114,16 @@
         }
     ],
     "option": {
+        "农场自动偷菜参数": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "持续时间",
+                    "pipeline_type": "int",
+                    "default": "3600"
+                }
+            ]
+        },
         "连点参数": {
             "type": "input",
             "label": "连点触发按键",
@@ -125,7 +137,7 @@
                     "name": "连点间隔（毫秒）",
                     "pipeline_type": "int",
                     "default": "100",
-                    "verify": "^[1-9]\\d*$"
+                    "verify": "^[1-9]\\d\\d*$"
                 }
             ],
             "pipeline_override": {
@@ -146,7 +158,7 @@
                     "name": "通过关卡数",
                     "pipeline_type": "int",
                     "default": "10",
-                    "verify": "^[1-9]\\d$"
+                    "verify": "^[1-9]\\d*$"
                 }
             ],
             "pipeline_override": {
@@ -166,7 +178,7 @@
                     "name": "作战次数",
                     "pipeline_type": "int",
                     "default": "10",
-                    "verify": "^[1-9]\\d$"
+                    "verify": "^[1-9]\\d*$"
                 }
             ],
             "pipeline_override": {

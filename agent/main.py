@@ -7,7 +7,6 @@ import json
 import subprocess
 from pathlib import Path
 
-from winioctlcon import Unknown
 
 # utf-8
 os.environ["PYTHONIOENCODING"] = "utf-8"
