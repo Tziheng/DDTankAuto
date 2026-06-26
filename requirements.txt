@@ -1,0 +1,8 @@
+maafw==5.2.3
+pillow==11.3.0
+rapidfuzz==3.14.1
+pywin32
+pandas
+pynput
+pyautogui
+keyboard
