@@ -43,11 +43,11 @@ class ReverseAgent(CustomAction):
             if not is_keyup:
                 if key_name == self.on_button:
                     self.reverse_flag = True
-                    logger.debug(f"翻转已开启（按下 {self.on_button}）")
+                    logger.info(f"翻转已开启（按下 {self.on_button}）")
                     return False  # suppress，拦截
                 if key_name == self.off_button:
                     self.reverse_flag = False
-                    logger.debug(f"翻转已关闭（按下 {self.off_button}）")
+                    logger.info(f"翻转已关闭（按下 {self.off_button}）")
                     return False
 
             if self.reverse_flag and key_name in _KEY_MAP:
