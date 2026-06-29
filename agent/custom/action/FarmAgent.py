@@ -41,12 +41,12 @@ class FarmAgent(CustomAction):
                 for result in recodetail.filtered_results:
                     name_box = [result.box[0] + 80, result.box[1],result.box[2] - 80, 30]
                     name_taskdetail = context.run_task("农场-识别好友名称",pipeline_override={"农场-识别好友名称":{"roi": name_box}})
-                    if name_taskdetail is not None:
+                    if name_taskdetail is not None and not context.tasker.stopping:
                         name_recodetail = name_taskdetail.nodes[0].recognition
                         friend_name = "".join([_.text for _ in name_recodetail.all_results if isinstance(_, OCRResult)])
                         logger.info(f"好友名称={friend_name}")
                     # 如果好友不在已偷过菜的好友列表中，则偷菜
-                    if friend_name not in stolen_friends:
+                    if friend_name not in stolen_friends and not context.tasker.stopping:
                         stolen_friends.add(friend_name)
                         button_pos = [result.box[0]+300, result.box[1]+35, 1,1]
                         context.run_task("农场-点击好友农场",pipeline_override={"农场-点击好友农场":{"target": button_pos}})
@@ -67,7 +67,6 @@ class FarmAgent(CustomAction):
             recognition = taskdetail.nodes[0].recognition
             if recognition is not None:
                 return [[_.box[0]+_.box[2]/2,_.box[1] + _.box[3],0,0] for _ in recognition.filtered_results]
-        logger.info("未识别到目标菜")
         return []
     
     def steal_vegetables(self,context:Context):
@@ -75,6 +74,7 @@ class FarmAgent(CustomAction):
         logger.info("开始偷菜...")
         context.run_task("农场-一键浇水")
         target_vegetables = self.get_target_vegetables(context)
+        logger.info(f"识别到{len(target_vegetables)}个目标菜")
         for pos in target_vegetables:
             context.run_task("农场-点击菜",pipeline_override={"农场-点击菜":{"target": pos}})
            
