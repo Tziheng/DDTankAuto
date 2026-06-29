@@ -44,15 +44,14 @@ class FarmAgent(CustomAction):
                     if name_taskdetail is not None and not context.tasker.stopping:
                         name_recodetail = name_taskdetail.nodes[0].recognition
                         friend_name = "".join([_.text for _ in name_recodetail.all_results if isinstance(_, OCRResult)])
-                        logger.info(f"好友名称={friend_name}")
                     # 如果好友不在已偷过菜的好友列表中，则偷菜
                     if friend_name not in stolen_friends and not context.tasker.stopping:
+                        logger.info(f"好友名称={friend_name}")
                         stolen_friends.add(friend_name)
                         button_pos = [result.box[0]+300, result.box[1]+35, 1,1]
                         context.run_task("农场-点击好友农场",pipeline_override={"农场-点击好友农场":{"target": button_pos}})
                         self.steal_vegetables(context)
-                    else:
-                        context.run_task("农场-下滑好友列表")
+                context.run_task("农场-下滑好友列表")
             time.sleep(1)
 
         logger.info("偷菜脚本运行结束！")
