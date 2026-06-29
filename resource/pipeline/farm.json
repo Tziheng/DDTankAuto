@@ -16,24 +16,20 @@
         ]
     },
     "农场-识别列表好友": {
-        "recognition": "TemplateMatch",
+        "recognition": "FeatureMatch",
         "template": "农场好友.png",
+        "green_mask": true,
         "roi": [
-            0,
-            0,
-            0,
-            0
+            862,
+            202,
+            333,
+            421
         ],
+        "count": 35
     },
-    "农场-识别好友名字": {
+    "农场-识别好友名称": {
         "recognition": "OCR",
-        "expected": [],
-        "roi_offset": [
-            0,
-            0,
-            0,
-            0
-        ],
+        "expected": []
     },
     "农场-点击好友农场": {
         "action": "Click",
@@ -56,11 +52,35 @@
     "农场-进入好友菜园": {
         "action": "Click",
         "target": [
-            250,
-            350,
+            463,
+            563,
+            0,
+            0
+        ]
+    },
+    "农场-下滑好友列表": {
+        "action": "Swipe",
+        "begin": [
+            1050,
+            540,
             0,
             0
         ],
+        "end": [
+            1050,
+            245,
+            0,
+            0
+        ]
+    },
+    "农场-一键浇水": {
+        "action": "Click",
+        "target": [
+            141,
+            638,
+            1,
+            1
+        ]
     },
     "农场-点击菜": {
         "action": "Click",
@@ -75,15 +95,32 @@
         ]
     },
     "农场-点击镰刀": {
-        "action": "Click"
+        "action": "Click",
+        "target": [
+            1087,
+            510,
+            0,
+            0
+        ]
+    },
+    "农场-点击退出": {
+        "action": "Click",
+        "target": [
+            61,
+            61,
+            1,
+            1
+        ]
     },
     "农场-识别目标菜": {
         "recognition": "FeatureMatch",
+        "green_mask": true,
         "template": [
             "spine/霓虹番茄.png",
             "spine/紫罗兰.png",
             "spine/水晶葡萄.png",
             "spine/水晶蘑菇.png"
-        ]
+        ],
+        "count": 8
     }
 }

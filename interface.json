@@ -63,8 +63,11 @@
             "default_check": false
         },
         {
-            "name": "农场自动偷菜（开发中）",
+            "name": "农场自动偷菜",
             "entry": "农场自动偷菜agent",
+            "option": [
+                "自动偷菜目标"
+            ],
             "description": "<span style=\"color:darkgray;font-size:15px\">该任务用于自动偷菜。</span>\n<span style=\"color:orange;font-size:15px\">可运行该任务的起始页面如下：游戏主界面，农场界面。</span>",
             "default_check": false
         },
@@ -121,6 +124,63 @@
         }
     ],
     "option": {
+        "自动偷菜目标": {
+            "type": "select",
+            "label": "自动偷菜目标",
+            "cases": [
+                {
+                    "name": "订单高级作物",
+                    "pipeline_override": {
+                        "农场-识别目标菜": {
+                            "template": [
+                                "spine/霓虹番茄.png",
+                                "spine/紫罗兰.png",
+                                "spine/水晶葡萄.png",
+                                "spine/水晶蘑菇.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "订单所有作物",
+                    "pipeline_override": {
+                        "农场-识别目标菜": {
+                            "template": [
+                                "spine/霓虹番茄.png",
+                                "spine/紫罗兰.png",
+                                "spine/水晶葡萄.png",
+                                "spine/水晶蘑菇.png",
+                                "spine/普通番茄.png",
+                                "spine/白罗兰.png",
+                                "spine/普通葡萄.png",
+                                "spine/普通蘑菇.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "石榴",
+                    "pipeline_override": {
+                        "农场-识别目标菜": {
+                            "template": [
+                                "spine/石榴.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "仙草",
+                    "pipeline_override": {
+                        "农场-识别目标菜": {
+                            "template": [
+                                "spine/仙草.png"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "default_case": ""
+        },
         "翻转操作控制按钮": {
             "type": "input",
             "label": "翻转操作控制按钮",
@@ -436,9 +496,17 @@
                             "expected": "时空漩涡"
                         }
                     }
+                },
+                {
+                    "name": "勇士竞技场",
+                    "pipeline_override": {
+                        "多人副本-搜寻副本": {
+                            "expected": "勇士竞技场"
+                        }
+                    }
                 }
             ],
-            "default_case": "啵咕运动会"
+            "default_case": "勇士竞技场"
         },
         "副本难度": {
             "type": "select",
